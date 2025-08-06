@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    /*video play */
+.course-video-link {
+    position: relative;
+    display: block;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 55px;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.play-button i {
+    color: #fff;
+    font-size: 50px;
+}
+
+</style>
+<!-- Courses Start -->
+<!-- Page Banner Start -->
+<div class="section page-banner">
+
+    <img class="shape-1 animation-round" src="{% static "img/shape-8.webp" %}" alt="Shape">
+
+    <img class="shape-2" src="{% static "img/shape/shape-23.webp" %}" alt="Shape">
+
+    <div class="container">
+        <!-- Page Banner Start -->
+        <div class="page-banner-content">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Courses</li>
+            </ul>
+            <h2 class="title"><span>{{course.course_name | title}} </span></h2>
+        </div>
+        <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+
+        <img class="icon-shape-1 animation-left" src="{% static "img/shape-5.webp" %}" alt="Shape">
+
+        <div class="box-content">
+            <div class="box-wrapper">
+                <i class="ri-medal-line"></i>
+            </div>
+        </div>
+
+        <img class="icon-shape-2" src="{% static "img/shape/shape-6.png" %}" alt="Shape">
+
+    </div>
+    <!-- Shape Icon Box End -->
+
+    <img class="shape-3" src="{% static "img/shape/shape-24.webp" %}" alt="Shape">
+
+    <img class="shape-author" src="{% static "img/author/author-11.webp" %}" alt="Shape">
+
+</div>
+<!-- Page Banner End -->
+ <!-- Courses Start -->
+
+
+<div class="section section-padding pt-0">
+    <div class="container ">
+        <!-- Courses Wrapper Start  -->
+        <div class="courses-wrapper-02 jjjj pt-0">
+            <div class="row">
+                {% for chapter in course_topics %}
+                <div class="col-lg-4 col-md-6 my-2">
+                    <!-- Single Courses Start -->
+                    <div class="single-courses">
+                        <div class="courses-images">
+                            {% if chapter.video_link or chapter.video_file%}
+                                <a href="{% url 'courses' course.slug chapter.slug %}">
+                            {% endif %}
+                                <img src="{{ chapter.image.url }}" alt="Courses">
+                                <div class="play-button">
+                                    <i class="ri-play-circle-fill"></i>
+                                </div>
+                            </a>
+                            <div class="courses-option dropdown">
+                                <button class="option-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><i class="icofont-share-alt"></i> Share</a></li>
+                                    <li><a href="#"><i class="icofont-plus"></i> Create Collection</a></li>
+                                    <li><a href="#"><i class="icofont-star"></i> Favorite</a></li>
+                                    <li><a href="#"><i class="icofont-archive"></i> Archive</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="courses-content">
+                            <div class="courses-author">
+                                {% if course.author.all %}
+                                    {% with first_author=course.author.first %}
+                                        <div class="author">
+                                            <div class="author-thumb">
+                                                <a href="#"><img src="{{ first_author.image.url }}" alt="{{ first_author.name }}"></a>
+                                            </div>
+                                            <div class="author-name">
+                                                <a class="name" href="#">{{ first_author.name }}</a>
+                                            </div>
+                                        </div>
+                                    {% endwith %}
+                                {% else %}
+                                    <p>Instructors information may be hidden or instructors not assigned yet.</p>
+                                {% endif %}
+                            </div>
+            
+                            <h4 class="title"><a href="courses-details.html">{{ chapter.title }}</a></h4>
+            
+                            <div class="courses-rating">
+                                <p>38% Complete</p>
+            
+                                <div class="rating-progress-bar">
+                                    <div class="rating-line" style="width: 38%;"></div>
+                                </div>
+            
+                                <div class="rating-meta">
+                                    <span class="rating-star">
+                                        <span class="rating-bar" style="width: 80%;"></span>
+                                    </span>
+                                    <p>Your rating</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Courses End -->
+                </div>
+                {% empty %}
+                <div class="col-lg-12 col-md-12  " >
+                    <div class="d-flex align-items-center justify-content-center"  style="font-size: 28px; color: rgb(190, 185, 185); height: 190px;">
+                       
+                            Video Related to this course will be added soon
+                       
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+        <!-- Courses Wrapper End  -->
+
+    </div>
+</div> 
+<!-- Courses End -->
+<!-- Download App Start -->
+<div class="section section-padding download-section">
+
+    <div class="app-shape-1"></div>
+    <div class="app-shape-2"></div>
+    <div class="app-shape-3"></div>
+    <div class="app-shape-4"></div>
+
+    <div class="container">
+
+        <!-- Download App Wrapper Start -->
+        <div class="download-app-wrapper mt-n6">
+
+            <!-- Section Title Start -->
+            <div class="section-title section-title-white">
+                <h5 class="sub-title">Ready to start?</h5>
+                <h2 class="main-title">Watch our latest tutorials videos and subscribe our channel.</h2>
+            </div>
+            <!-- Section Title End -->
+
+            <img class="shape-1 animation-right" src="{% static "img/shape/shape-14.png" %}" alt="Shape">
+
+            <!-- Download App Button End -->
+            <div class="download-app-btn">
+                <ul class="app-btn">
+                    <li><a href="#"><img src="{% static "img/brand/youtube1.png" %}" alt="Youtube"></a></li>
+                    <li><a href="#"><img src="{% static "img/brand/linkedin2.png" %}" alt="Linkedin"></a></li>
+                </ul>
+            </div>
+            <!-- Download App Button End -->
+
+        </div>
+        <!-- Download App Wrapper End -->
+
+    </div>
+</div>
+<!-- Download App End -->
+{% endblock content %}

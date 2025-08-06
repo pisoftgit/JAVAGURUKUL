@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- Courses Start -->
+  <!-- Page Banner Start -->
+  <div class="section page-banner">
+    <img class="shape-1 animation-round" src="{% static 'img/shape-8.webp' %}" alt="Shape" />
+
+    <img class="shape-2" src="{% static 'img/shape/shape-23.webp' %}" alt="Shape" />
+
+    <div class="container">
+      <!-- Page Banner Start -->
+      <div class="page-banner-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li class="active">Services</li>
+        </ul>
+        <h2 class="title">Our <span>Services</span></h2>
+      </div>
+      <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+      <img class="icon-shape-1 animation-left" src="{% static 'img/shape-5.webp' %}" alt="Shape" />
+
+      <div class="box-content">
+        <div class="box-wrapper">
+          <i class="ri-medal-line"></i>
+        </div>
+      </div>
+
+      <img class="icon-shape-2" src="{% static 'img/shape/shape-6.png' %}" alt="Shape" />
+    </div>
+    <!-- Shape Icon Box End -->
+
+    <img class="shape-3" src="{% static 'img/shape/shape-24.webp' %}" alt="Shape" />
+
+    <img class="shape-author" src="{% static 'img/author/author-11.webp' %}" alt="Shape" />
+  </div>
+  <!-- Page Banner End -->
+
+  <!-- Services Section Start -->
+  <div class="section section-padding-01">
+    {% if selected_service %}
+      <div class="container py-5">
+        <div class="row">
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="bg-white p-4 rounded shadow-sm mb-4">
+              <h5 class="mb-3">Services List</h5>
+              <ul class="list-group">
+                {% for slug, service in services_data.items %}
+                  <li class="list-group-item {% if slug == selected_slug %}active{% endif %}">
+                    <a class="{% if slug == selected_slug %}text-white{% endif %}" href="?service={{ slug }}">{{ service.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="bg-white p-4 rounded shadow-sm mb-4">
+              {% comment %} <h6>Download Catalog</h6>
+              <p>
+                <a href="{% static 'catalog.pdf' %}">📄 Catalog PDF</a>
+              </p>
+              <p>
+                <a href="{% static 'catalog.doc' %}">📄 Catalog DOC</a>
+              </p> {% endcomment %}
+              <div class="d-flex gap-3 flex-wrap">
+          <h6> Ready to start your Java journey?</h6>
+          <p>Join our comprehensive Java training programs designed for all skill levels.</p>
+          <a class="btn btn-primary btn-hover-dark" href="{% url 'start_course' %}">Start Course</a>
+        </div>
+            </div>
+
+            <div class="bg-primary text-white text-center p-4 rounded shadow-sm">
+              <div class="mb-2">
+                <i class="ri-headphone-line" style="font-size: 2rem;"></i>
+              </div>
+              <h6 class="mb-1">Have a Question?</h6>
+              <p class="mb-1">📞 +918288029930</p>
+              <p>✉️ hr@javagurukul.com</p>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <img src="{% static selected_service.image %}" class="nimg-fluid rounded mb-4 shadow-sm" alt="{{ selected_service.title }}" />
+            <h3 class="mb-3">{{ selected_service.title }}</h3>
+            <p>{{ selected_service.description }}</p>
+            <ul>
+              💡 What You Get:
+              <li>✔️ Hands-on real-world training</li>
+  <li>✔️ 1-on-1 personalized mentorship</li>
+
+  <li>✔️ Downloadable resources and assignments</li>
+ 
+            </ul>
+            <br>
+            <ul>
+              👨‍🏫 Why Learn With Us?
+<li>✔️Structured, beginner-friendly lessons</li>
+<li>✔️Real-world use cases, from console apps to web and enterprise solutions</li>
+<li>✔️Taught by industry professionals and experienced educators</li>
+
+
+            </ul>
+
+            <p class="mt-3">Ready to boost your Java career? Get started today by joining the program best suited to your goals!</p>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div class="section-padding-02 mt-n6" style="margin-bottom:30px;">
+        <div class="container">
+          <div class="section-title shape-03 text-center">
+            <h2 class="main-title">Our<span>Services</span></h2>
+          </div>
+
+          <!-- About Items Wrapper Start -->
+          <div class="about-items-wrapper">
+            <div class="row">
+              <div class="col-lg-4" style="position: relative;">
+                <!-- About Item Start -->
+                <div class="about-item">
+                  <div class="item-icon-title">
+                    <div class="item-icon">
+                      <i class="ri-user-fill"></i>
+                    </div>
+                    <div class="item-title">
+                      <h3 class="title"><a href="{% url 'services' %}?service=online-java-courses">Online Java Courses (Free & Paid)</a></h3>
+                    </div>
+                  </div>
+
+                  <p>Master Java from scratch through our structured and practical video tutorials on YouTube. From Core Java to advanced frameworks like Spring Boot, our content is beginner-friendly yet industry-relevant.</p>
+                  <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px; padding-left: 7px; padding-right: 7px;border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                    <a href="{% url 'services' %}?service=online-java-courses"><i class="ri-arrow-right-line"></i></a>
+                  </div>
+                </div>
+
+                <!-- About Item End -->
+              </div>
+              <div class="col-lg-4" style="position: relative;">
+                <!-- About Item Start -->
+                <div class="about-item">
+                  <div class="item-icon-title">
+                    <div class="item-icon">
+                      <i class="ri-list-indefinite"></i>
+                    </div>
+                    <div class="item-title">
+                      <h3 class="title"><a href="{% url 'services' %}?service=mentorship">Live Doubt Clearing/Mentorship</a></h3>
+                    </div>
+                  </div>
+                  <p>Get personalized support through live doubt-clearing sessions and one-on-one mentorship. Our guidance helps you overcome coding challenges and build a strong Java foundation.</p>
+                  <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px; padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                    <a href="{% url 'services' %}?service=mentorship"><i class="ri-arrow-right-line"></i></a>
+                  </div>
+                </div>
+                <!-- About Item End -->
+              </div>
+              <div class="col-lg-4" style="position: relative;">
+                <!-- About Item Start -->
+                <div class="about-item">
+                  <div class="item-icon-title">
+                    <div class="item-icon">
+                      <i class="ri-indent-increase"></i>
+                    </div>
+                    <div class="item-title">
+                      <h3 class="title"><a href="{% url 'services' %}?service=project-training">Project-Based Training</a></h3>
+                    </div>
+                  </div>
+
+                  <p>Enhance coding and problem-solving skills with real-time Java projects. From mini to major, each follows industry standards. Build a powerful portfolio that showcases your talent beyond a traditional resume.</p>
+                  <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px;padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                    <a href="{% url 'services' %}?service=project-training"><i class="ri-arrow-right-line"></i></a>
+                  </div>
+                </div>
+                <!-- About Item End -->
+              </div>
+            </div>
+          </div>
+          <!-- About Items Wrapper End -->
+          <div class="about-items-wrapper">
+            <div class="row">
+              <div class="col-lg-4" style="position: relative;">
+                <!-- About Item Start -->
+                <div class="about-item">
+                  <div class="item-icon-title">
+                    <div class="item-icon">
+                      <i class="ri-user-fill"></i>
+                    </div>
+                    <div class="item-title">
+                      <h3 class="title"><a href="{% url 'services' %}?service=certification">Certification Programs</a></h3>
+                    </div>
+                  </div>
+                  <p>Earn industry-recognized certificates upon successful course or project completion.Our certifications validate your Java skills and add credibility to your resume.Stand out to employers with proof of practical, hands-on expertise.</p>
+                  <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px;padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                    <a href="{% url 'services' %}?service=certification"><i class="ri-arrow-right-line"></i></a>
+                  </div>
+                </div>
+                <!-- About Item End -->
+              </div>
+              <div class="col-lg-4" style="position: relative;">
+                <!-- About Item Start -->
+                <div class="about-item">
+                  <div class="item-icon-title">
+                    <div class="item-icon">
+                      <i class="ri-list-indefinite"></i>
+                    </div>
+                    <div class="item-title">
+                      <h3 class="title"><a href="{% url 'services' %}?service=internship">Internship & Industrial Training</a></h3>
+                    </div>
+                  </div>
+                  <p>Join our 3 or 6-month internship program specially designed for MCA/BCA/B.Tech students. Gain real-world experience through a structured syllabus, daily tasks, and hands-on projects that connect academic learning with industry skills.</p>
+                  <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px;padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                    <a href="{% url 'services' %}?service=internship"><i class="ri-arrow-right-line"></i></a>
+                  </div>
+                </div>
+                <!-- About Item End -->
+              </div>
+              <div class="col-lg-4" style="position: relative;">
+                <!-- About Item Start -->
+                <div class="about-item">
+                  <div class="item-icon-title">
+                    <div class="item-icon">
+                      <i class="ri-indent-increase"></i>
+                    </div>
+                    <div class="item-title">
+                      <h3 class="title"><a href="{% url 'services' %}?service=job-prep">Job Preparation Services</a></h3>
+                    </div>
+                  </div>
+
+                  <p>Crack Java interviews with our dedicated job-prep resources, mock tests, and resume support.Learn commonly asked questions, coding rounds, and system design essentials.We help you become job-ready with the skills companies actually look for.</p>
+                  <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px;padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                    <a href="{% url 'services' %}?service=job-prep"><i class="ri-arrow-right-line"></i></a>
+                  </div>
+                </div>
+                <!-- About Item End -->
+              </div>
+            </div>
+          </div>
+          <!-- About Items Wrapper End -->
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Services Section End -->
+
+  <script>
+  // Save scroll position before link is clicked
+  document.querySelectorAll('a[href*="?service="]').forEach(link => {
+    link.addEventListener('click', function () {
+      localStorage.setItem('scrollPos', window.scrollY);
+    });
+  });
+
+  // Restore scroll position after page loads
+  window.addEventListener('load', function () {
+    const scrollPos = localStorage.getItem('scrollPos');
+    if (scrollPos) {
+      window.scrollTo(0, parseInt(scrollPos));
+      localStorage.removeItem('scrollPos');
+    }
+  });
+</script>
+
+{% endblock content %}

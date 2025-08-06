@@ -1,0 +1,567 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+        <!-- Courses Start -->
+        <!-- Page Banner Start -->
+        <div class="section page-banner">
+
+            <img class="shape-1 animation-round" src="{% static 'img/shape-8.webp' %}" alt="Shape">
+
+            <img class="shape-2" src="{% static 'img/shape/shape-23.webp' %}" alt="Shape">
+
+            <div class="container">
+                <!-- Page Banner Start -->
+                <div class="page-banner-content">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li class="active">About</li>
+                    </ul>
+                    <h2 class="title">About Java <span>गुरुकुल</span></h2>
+                </div>
+                <!-- Page Banner End -->
+            </div>
+
+            <!-- Shape Icon Box Start -->
+            <div class="shape-icon-box">
+
+                <img class="icon-shape-1 animation-left" src="{% static 'img/shape-5.webp' %}" alt="Shape">
+
+                <div class="box-content">
+                    <div class="box-wrapper">
+                        <i class="ri-medal-line"></i> 
+                    </div>
+                </div>
+
+                <img class="icon-shape-2" src="{% static 'img/shape/shape-6.png' %}" alt="Shape">
+
+            </div>
+            <!-- Shape Icon Box End -->
+
+            <img class="shape-3" src="{% static 'img/shape/shape-24.webp' %}" alt="Shape">
+
+            <img class="shape-author" src="{% static 'img/author/author-11.webp' %}" alt="Shape">
+
+        </div>
+        <!-- Page Banner End -->
+        <!-- About Start -->
+        <div class="section">
+
+            <div class="section-padding-02 mt-n10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- About Images Start -->
+                            <div class="about-images">
+                                <div class="images">
+                                    <img src="{% static 'img/about.jpg' %}" alt="About">
+                                </div>
+
+                                <div class="about-years">
+                                    <div class="years-icon">
+                                        <img src="{% static 'img/logo-icon.webp' %}" alt="About">
+                                    </div>
+                                    <p><strong>28+</strong> Years Experience</p>
+                                </div>
+                            </div>
+                            <!-- About Images End -->
+
+                        </div>
+                        <div class="col-lg-6">
+
+                            <!-- About Content Start -->
+                            <div class="about-content">
+                                <h5 class="sub-title">Welcome to Java Gurukul.</h5>
+                                <h2 class="main-title">You can join with Java Gurukul and upgrade your skill for your <span>bright future.</span></h2>
+                                <p style="margin-bottom: 20px;"> At Java Gurukul, we simplify Java learning through accessible, practical, and high-quality tutorials. Our mission is to help students and professionals build strong programming foundations. With free content on our popular YouTube channel, we support beginners starting their journey and advanced learners preparing for job interviews. Java Gurukul is your trusted guide, offering the clarity and support you need to master Java and achieve your career goals. </p>
+                                <div class="list_about">
+                                    <ul style="list-style-type: disc;"> 
+                                        <li>India’s trusted Java learning platform</li> 
+                                        <li>Free, beginner-friendly video course</li> 
+                                        <li>100% practical learning approach</li>
+                                        <li>Covers the entire Java journey</li>
+                                        <li>Designed for college students, job seekers, and IT professionals</li>
+                                        <li>Builds real-world problem-solving skills</li>
+                                    </ul>
+                                    
+
+                                {% comment %} <a href="/start_course/" class="btn btn-primary btn-hover-dark">Start A Course</a> {% endcomment %}
+                            </div>
+                            <!-- About Content End -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- our services start -->
+            <div class="section-padding-02 mt-n6">
+                <div class="container">
+                    <div class="section-title shape-03 text-center">
+                
+                    <h2 class="main-title">Our<span> Services</span></h2>
+                </div>
+
+                    <!-- About Items Wrapper Start -->
+                    <div class="about-items-wrapper">
+                        <div class="row">
+                            <div class="col-lg-4 "style="position: relative;">
+                                <!-- About Item Start -->
+                                <div class="about-item">
+                                    <div class="item-icon-title">
+                                        <div class="item-icon">
+                                            <i class="ri-user-fill"></i>
+                                        </div>
+                                        <div class="item-title">
+                                            <h3 class="title"> <a href="{% url 'services' %}?service=online-java-courses">Online Java Courses (Free & Paid)</a></h3>
+                                        </div>
+                                    </div>
+                                
+                                    <p> Master Java from scratch through our structured and practical video tutorials on YouTube. From Core Java to advanced frameworks like Spring Boot, our content is beginner-friendly yet industry-relevant.</p>
+                                    <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px; padding-left: 7px; padding-right: 7px;border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                    <a href="{% url 'services' %}?service=online-java-courses"> <i class="ri-arrow-right-line"></i></a>
+                        </div>                  
+                                </div>
+                                
+            
+                                <!-- About Item End -->
+                            </div>
+                            <div class="col-lg-4 "style="position: relative;">
+                                <!-- About Item Start -->
+                                <div class="about-item">
+                                    <div class="item-icon-title">
+                                        <div class="item-icon">
+                                            <i class="ri-list-indefinite"></i>
+                                        </div>
+                                        <div class="item-title">
+                                            <h3 class="title"> <a href="{% url 'services' %}?service=mentorship">Live Doubt Clearing/Mentorship </a></h3>
+                                        </div>
+                                    </div>
+                                <p>Get personalized support through live doubt-clearing sessions and one-on-one mentorship. Our guidance helps you overcome coding challenges and build a strong Java foundation.</p>
+                                <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; padding-top font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px; padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                            <a href="{% url 'services' %}?service=mentorship"> <i class="ri-arrow-right-line"></i></a>
+                            </div>                   
+                                </div>
+                                <!-- About Item End -->
+                            </div>
+                            <div class="col-lg-4 "style="position: relative;">
+                                <!-- About Item Start -->
+                                <div class="about-item">
+                                    <div class="item-icon-title">
+                                        <div class="item-icon">
+                                            <i class="ri-indent-increase"></i>
+                                        </div>
+                                        <div class="item-title">
+                                            <h3 class="title"><a href="{% url 'services' %}?service=project-training"> Project-Based Training </a></h3>
+                                        </div>
+                                    </div>
+                                    
+                                    <p> Enhance coding and problem-solving skills with real-time Java projects. From mini to major, each follows industry standards. Build a powerful portfolio that showcases your talent beyond a traditional resume.</p>
+                                <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px;padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                            <a href="{% url 'services' %}?service=project-training"> <i class="ri-arrow-right-line"></i></a>
+                            </div>                   
+                                </div>
+                                <!-- About Item End -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- About Items Wrapper End -->
+                    <div class="about-items-wrapper">
+                        <div class="row">
+                            <div class="col-lg-4 "style="position: relative;">
+                                <!-- About Item Start -->
+                                <div class="about-item">
+                                    <div class="item-icon-title">
+                                        <div class="item-icon">
+                                            <i class="ri-user-fill"></i>
+                                        </div>
+                                        <div class="item-title">
+                                            <h3 class="title"><a href="{% url 'services' %}?service=certification"> Certification Programs </a></h3>
+                                        </div>
+                                    </div>
+                                    <p>Earn industry-recognized certificates upon successful course or project completion.Our certifications validate your Java skills and add credibility to your resume.Stand out to employers with proof of practical, hands-on expertise.</p>
+                                <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px;padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                            <a href="{% url 'services' %}?service=certification"> <i class="ri-arrow-right-line"></i></a>
+                            </div>                   
+                                </div>
+                                <!-- About Item End -->
+                            </div>
+                            <div class="col-lg-4 "style="position: relative;">
+                                <!-- About Item Start -->
+                                <div class="about-item">
+                                    <div class="item-icon-title">
+                                        <div class="item-icon">
+                                            <i class="ri-list-indefinite"></i>
+                                        </div>
+                                        <div class="item-title">
+                                            <h3 class="title"> <a href="{% url 'services' %}?service=internship"> Internship & Industrial Training</a></h3>
+                                        </div>
+                                    </div>
+                                    <p> Join our 3 or 6-month internship program specially designed for MCA/BCA/B.Tech students. Gain real-world experience through a structured syllabus, daily tasks, and hands-on projects that connect academic learning with industry skills.</p>
+                                <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px;padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                            <a href="{% url 'services' %}?service=internship"> <i class="ri-arrow-right-line"></i></a>
+                            </div>                    
+                                </div>
+                                <!-- About Item End -->
+                            </div>
+                            <div class="col-lg-4 "style="position: relative;">
+                                <!-- About Item Start -->
+                                <div class="about-item">
+                                    <div class="item-icon-title">
+                                        <div class="item-icon">
+                                            <i class="ri-indent-increase"></i>
+                                        </div>
+                                        <div class="item-title">
+                                            <h3 class="title"> <a href="{% url 'services' %}?service=job-prep"> Job Preparation Services</a></h3>
+                                        </div>
+                                    </div>
+                                    
+                                    <p> Crack Java interviews with our dedicated job-prep resources, mock tests, and resume support.Learn commonly asked questions, coding rounds, and system design essentials.We help you become job-ready with the skills companies actually look for.</p>
+                                <div class="arrow-icon" style="position: absolute; right: 20px; bottom : 10px; font-size: 20px; color: #333; background-color: rgba(48, 146, 85, 0.2); padding: 2px;padding-left: 7px; padding-right: 7px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: pointer;">
+                                <a href="{% url 'services' %}?service=job-prep"> <i class="ri-arrow-right-line"></i></a>
+                                </div>
+
+                                </div>
+                                <!-- About Item End -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- About Items Wrapper End -->
+
+                </div>
+            </div>
+        <!-- our services end -->
+        </div>
+        <!-- About End -->
+
+        <!-- Call to Action Start -->
+        <div class="section section-padding-02">
+            <div class="container">
+
+                <!-- Call to Action Wrapper Start -->
+                <div class="call-to-action-wrapper">
+
+                    <img class="cat-shape-02" src="{% static 'img/shape/shape-13.svg' %}" alt="Shape">
+                    <img class="cat-shape-03 animation-round" src="{% static 'img/shape/shape-12.png' %}" alt="Shape">
+
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+
+                            <!-- Section Title Start -->
+                            <div class="section-title shape-02">
+                                <h5 class="sub-title">Become A Instructor</h5>
+                                <h2 class="main-title">You can join with Java गुरुकुल as <span>a instructor?</span></h2>
+                            </div>
+                            <!-- Section Title End -->
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="call-to-action-btn">
+                                <a class="btn btn-primary btn-hover-dark" href="/contact/">Drop Information</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Call to Action Wrapper End -->
+
+            </div>
+        </div>
+        <!-- Call to Action End -->
+
+        <!-- Team Member's Start -->
+        <div class="section section-padding mt-n1">
+            <div class="container">
+
+                <!-- Section Title Start -->
+                <div class="section-title shape-03 text-center">
+                    <h5 class="sub-title">Team Member’s</h5>
+                    <h2 class="main-title">Our Skilled <span> Instructor</span></h2>
+                </div>
+                <!-- Section Title End -->
+
+                <!-- Team Wrapper Start -->
+                <div class="team-wrapper">
+                    <div class="row row-cols-lg-5 row-cols-sm-3 row-cols-2 ">
+                        {% for instructor in team_members %}
+                        <div class="col">
+                            <!-- Single Team Start -->
+                            <div class="single-team">
+                                <div class="team-thumb">
+                                    <img src="{{ instructor.image.url }}" alt="{{ instructor.name }}">
+                                </div>
+                                <div class="team-content">
+                                    <div class="rating">
+                                        <span class="count">{{ instructor.rating }}</span>
+                                        <i class="ri-star-line"></i>
+                                        <span class="text">(rating)</span>
+                                    </div>
+                                    <h4 class="name">{{ instructor.name }}</h4>
+                                    <span class="designation">{{ instructor.designation }}</span>
+                                </div>
+                            </div>
+                            <!-- Single Team End -->
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <!-- Team Wrapper End -->
+
+            </div>
+        </div>
+                
+        <!-- FAQ Start -->
+        <div>
+            <div class="container">
+
+                <!-- FAQ Tab Menu Start -->
+                {% comment %} <div class="faq-tab-menu">
+                    <ul class="nav nav-justified">
+                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">UI/UX Design</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">Development</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">Data Science</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4">Business</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab5">Financial</button></li>
+                    </ul>
+                </div> {% endcomment %}
+                <!-- FAQ Tab Menu End -->
+
+                <!-- Section Title Start -->
+                <div class="section-title shape-03 text-center">
+                    <h5 class="sub-title">Recently Asked Questions</h5>
+                    <h2 class="main-title">FAQs<span> Java Gurukul</span></h2>
+                </div>
+                <!-- Section Title End -->
+                <!-- FAQ Tab Content Start -->
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tab1">
+                        <!-- FAQ Wrapper Start -->
+                        <div class="faq-wrapper">
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">What is Java Gurukul and how it does work?</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>Java Gurukul is an online platform offering a diverse range of courses across various subjects. Learners can enroll in courses, access course materials, and interact with instructors.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">How do I enroll in a course</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>To enroll in a course, simply browse our course catalog, select the course you're interested in, and click on the "Enroll Now" button. Follow the prompts to complete the enrollment process.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">Is there any support available if I have questions or need assistance</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>Yes, we provide dedicated support to assist learners with any questions or concerns they may have. You can reach out to our support team via email or through our online messaging system.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">Can I interact with other instructors and other learners</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>Yes, our platform facilitates interaction between instructors and learners through discussion forums, messaging, and live sessions. Engage with instructors and peers to ask questions, share insights, and collaborate on projects.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">Do I receive a certificate upon completing a course?</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>Yes, learners who successfully complete a course will receive a certificate of completion. Certificates can be downloaded and shared to showcase your achievements.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">How long do I have access to course materials</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>Course access varies depending on the enrollment type. Some courses offer lifetime access to materials, while others have a specified access period. Check the course details for information on access duration.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">Do you offer career services or job placement assistance?</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>While we do not offer direct job placement services, many of our courses provide valuable skills and certifications that can enhance your employability. Additionally, we may offer career resources and guidance to help you pursue your career goals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">How can I stay updated on new courses and announcements?</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>Stay informed about new courses, promotions, and announcements by subscribing to our newsletter and following us on social media. You can also visit our website regularly for updates.</p>
+                                            {% comment %} <p>Backend development involves creating the server-side logic and database interactions that power the frontend, often using languages like Python, Ruby, PHP, or Java.</p> {% endcomment %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">As there any discounts or promotions available for courses?</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>We periodically offer discounts and promotions on select courses. Keep an eye out for special offers on our website or subscribe to our newsletter to stay informed about upcoming deals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                            <!-- Single FAQ Item Start -->
+                            <div class="single-faq-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="faq-title">
+                                            <h4 class="title">Can I switch courses or transfer my enrollment to a different course</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="faq-text">
+                                            <p>In certain circumstances, we may allow course switches or enrollment transfers. Please reach out to our support team with your request, and we will do our best to accommodate your needs</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single FAQ Item End -->
+
+                        </div>
+                        <!-- FAQ Wrapper End -->
+                    </div>
+                    
+                </div>
+                <!-- FAQ Tab Content End -->
+
+                <!-- FAQ Button End -->
+                {% comment %} <div class="faq-btn text-center">
+                    <a class="btn btn-primary btn-hover-dark" href="/faq/">Other’s Question</a>
+                </div> {% endcomment %}
+                <!-- FAQ Button End -->
+
+            </div>
+        </div>
+
+        <!-- FAQ End -->
+
+
+
+        <!-- Download App Start -->
+        <div class="section section-padding download-section">
+
+            <div class="app-shape-1"></div>
+            <div class="app-shape-2"></div>
+            <div class="app-shape-3"></div>
+            <div class="app-shape-4"></div>
+
+            <div class="container">
+
+                <!-- Download App Wrapper Start -->
+                <div class="download-app-wrapper mt-n6">
+
+                    <!-- Section Title Start -->
+                    <div class="section-title section-title-white">
+                        <h5 class="sub-title">Ready to start?</h5>
+                        <h2 class="main-title">Watch our latest tutorials videos and subscribe our channel. </h2>
+                    </div>
+                    <!-- Section Title End -->
+
+                    <img class="shape-1 animation-right" src="{% static 'img/shape/shape-14.png' %}" alt="Shape">
+
+                    <!-- Download App Button End -->
+                    <div class="download-app-btn">
+                        <ul class="app-btn">
+                            <li><a href="#"><img src="{% static 'img/brand/youtube1.png' %}" alt="Youtube"></a></li>
+                            <li><a href="#"><img src="{% static 'img/brand/linkedin2.png' %}" alt="Linkedin"></a></li>
+                        </ul>
+                    </div>
+                    <!-- Download App Button End -->
+
+                </div>
+                <!-- Download App Wrapper End -->
+
+            </div>
+        </div>
+
+{% endblock content  %}

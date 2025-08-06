@@ -1,0 +1,667 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- Slider Start -->
+  <div class="section slider-section">
+    <!-- Slider Shape Start -->
+    <div class="slider-shape">
+      <img class="shape-1 animation-round" src="{% static 'img/shape-8.webp' %}" alt="Shape" />
+    </div>
+    <!-- Slider Shape End -->
+
+    <div class="container">
+      <!-- Slider Content Start -->
+      <div class="slider-content">
+        {% comment %} <h5 class="sub-title">Conceptualizing courses in the easiest way</h5> {% endcomment %}
+        <h2 class="main-title">Empowering You with <span>Industry-Ready Skills.</span></h2>
+        <p>At Java Gurukul, we believe in empowering students and professionals with the skills that matter. Our training programs are designed to provide 100% practical knowledge of Java — from core concepts to advanced frameworks — through real-time projects and expert guidance.</p> 
+          <div class="d-flex gap-3 flex-wrap">
+          <a class="btn btn-primary btn-hover-dark text-nowrap px-4 py-1" href="{% url 'contact' %}">Get a Free Consultation</a>
+          <a class="btn btn-primary btn-hover-dark text-nowrap px-4 py-1" href="{% url 'start_course' %}">Start Course</a>
+        </div>
+      </div>
+      <!-- Slider Content End -->
+    </div>
+
+    <!-- Slider Courses Box Start -->
+    <div class="slider-courses-box">
+      <img class="shape-1 animation-left" src="{% static 'img/shape-5.webp' %}" alt="Shape" />
+<div class="d-none d-md-block">
+  <div class="box-content">
+    <div class="box-wrapper">
+      <i class="ri-book-open-line"></i>
+      <span class="count">New</span>
+      <p>courses</p>
+    </div>
+  </div>
+</div>
+
+
+      <img class="shape-2" src="{% static 'img/shape/shape-6.png' %}" alt="Shape" />
+    </div>
+    <!-- Slider Courses Box End -->
+
+    <!-- Slider Rating Box Start -->
+    <div class="slider-rating-box">
+      <div class="box-rating">
+        <div class="box-wrapper">
+          <span class="count">4.8 <i class="ri-star-line"></i></span>
+          <p>Rating (86K)</p>
+        </div>
+      </div>
+
+      <img class="shape animation-up" src="{% static 'img/shape-7.webp' %}" alt="Shape" />
+    </div>
+    <!-- Slider Rating Box End -->
+
+    <!-- Slider Images Start -->
+    <div class="slider-images">
+      <div class="images">
+        <img src="{% static 'img/slider-1.webp' %}" alt="Slider" />
+      </div>
+    </div>
+    <!-- Slider Images End -->
+
+    <!-- Slider Video Start -->
+    <div class="slider-video">
+      <img class="shape-1" src="{% static 'img/shape-9.webp' %}" alt="Shape" />
+
+      <div class="video-play">
+        <img src="{% static 'img/shape/shape-10.webp' %}" alt="Shape" />
+        <a href="https://www.youtube.com/watch?v=BRvyWfuxGuU" class="play video-popup"><i class="flaticon-play"></i></a>
+      </div>
+    </div>
+    <!-- Slider Video End -->
+  </div>
+  <!-- Slider End -->
+<div class="section section-padding-02">
+    <div class="container">
+      <!-- Section Title Start -->
+      <div class="section-title shape-03 mb-4">
+        <h2 class="main-title text-center mt-2">Java<span>Technologies</span></h2>
+      </div>
+      
+
+
+  
+<div style="width: 100%; overflow: hidden; padding: 20px 0; position: relative;">
+  <div style="display: flex; width: max-content; animation: scrollMarquee 15s linear infinite;">
+    
+    <!-- One full set of icons -->
+    {% for i in "1"|make_list %}
+      <img src="{% static 'img/icon/hibernate1.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/spring.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/web1.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/springboot.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/thymeleaf.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/java2.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/JEE.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+    {% endfor %}
+
+    <!-- Duplicate set right after the first -->
+    {% for i in "2"|make_list %}
+      <img src="{% static 'img/icon/hibernate1.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/spring.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/web1.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/springboot.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/thymeleaf.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/java2.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+      <img src="{% static 'img/icon/JEE.png' %}" style="width: 120px; height: 80px; margin-right: 60px; object-fit: contain;" />
+    {% endfor %}
+
+  </div>
+</div>
+
+<style>
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>
+
+    </div>
+  </div>
+  <!-- Call to Action Start -->
+  <div class="section section-padding-02">
+    <div class="container">
+      <!-- Call to Action Wrapper Start -->
+      <div class="call-to-action-wrapper">
+        <img class="cat-shape-01 animation-round" src="{% static 'img/shape/shape-12.png' %}" alt="Shape" />
+        <img class="cat-shape-02" src="{% static 'img/shape/shape-13.svg' %}" alt="Shape" />
+        <img class="cat-shape-03 animation-round" src="{% static 'img/shape/shape-12.png' %}" alt="Shape" />
+
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <!-- Section Title Start -->
+            <div class="section-title shape-02">
+              <h4 class="sub-title">We Have Best Portfolios</h4>
+              <p>At JavaGurukul, we take pride in curating the best portfolios to enrich your learning journey.Our carefully selected portfolios showcase exemplary work across a variety of disciplines, providing inspiration and insight into industry standards and best practices</p>
+            </div>
+            <!-- Section Title End -->
+          </div>
+          <div class="col-md-6">
+            <div class="call-to-action-btn">
+              <a class="btn btn-primary btn-hover-dark" href="/about/">More Information</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Call to Action Wrapper End -->
+    </div>
+  </div>
+  <!-- Call to Action End -->
+  <div class="section section-padding mt-n1">
+    <div class="container" style="position: relative;">
+      <!-- Section Title Start -->
+      <div class="section-title shape-03 text-center">
+        <h5 class="sub-title">Our Courses</h5>
+        <h2 class="main-title">Our Courses <span>Workflow</span></h2>
+      </div>
+      <!-- Section Title End -->
+
+      <!-- How it Work Wrapper Start -->
+      <div class="how-it-work-wrapper">
+        <!-- Single Work Start -->
+        <div class="single-work">
+          <img class="shape-1" src="{% static 'img/shape/shape-15.png' %}" alt="Shape" />
+
+          <div class="work-icon">
+            <i class="ri-search-eye-line"></i>
+          </div>
+          <div class="work-content">
+            <h3 class="title">Identifying the course</h3>
+            <p>Begin by clearly defining the task or concept that you want to teach. This could be anything from learning a new programming language to understanding a scientific concept.</p>
+          </div>
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="work-arrow">
+          <img class="arrow" src="{% static 'img/shape/shape-17.png' %}" alt="Shape" />
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="single-work">
+          <img class="shape-2" src="{% static 'img/shape/shape-15.png' %}" alt="Shape" />
+
+          <div class="work-icon">
+            <i class="ri-list-ordered"></i>
+          </div>
+          <div class="work-content">
+            <h3 class="title">Breaking the task into Parts</h3>
+            <p>Break down the task into its parts or sub-skills. For example, if the task is to learn how to program in Java , sub-skills might include basic syntax, data types, etc.</p>
+          </div>
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="work-arrow">
+          <img class="arrow" src="{% static 'img/shape/shape-17.png' %}" alt="Shape" />
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="single-work">
+          <img class="shape-3" src="{% static 'img/shape/shape-16.png' %}" alt="Shape" />
+
+          <div class="work-icon">
+            <i class="ri-verified-badge-line"></i>
+          </div>
+          <div class="work-content">
+            <h3 class="title">Learning Modules</h3>
+            <p>Engage with course materials, including video lectures, readings, assignments, and quizzes. Our modular approach allows you to progress through the course at your own pace,</p>
+          </div>
+        </div>
+        <!-- Single Work End -->
+      </div>
+
+      <div class="how-it-work-wrapper">
+        <div class="work-arrow d-flex align-items-center justify-content-between">
+          <img class="arrow left-rotate-arrow m-auto arrow-down" src="{% static 'img/shape/shape-17.png' %}" alt="Shape" />
+        </div>
+      </div>
+
+      <div class="how-it-work-wrapper">
+        <!-- Single Work Start -->
+        <div class="single-work">
+          <img class="shape-3" src="{% static 'img/shape/shape-16.png' %}" alt="Shape" />
+          <div class="work-icon">
+            <i class="ri-verified-badge-line"></i>
+          </div>
+          <div class="work-content">
+            <h3 class="title">Flexibility</h3>
+            <p>Allow learners to navigate freely between different parts of the task. Provide options for learners to revisit previous sections or skip ahead if they feel confident in their understanding.</p>
+          </div>
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="work-arrow">
+          <img class="arrow left-rotate-arrow" src="{% static 'img/shape/shape-17.png' %}" alt="Shape" />
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="single-work">
+          <img class="shape-2" src="{% static 'img/shape/shape-15.png' %}" alt="Shape" />
+
+          <div class="work-icon">
+            <i class="ri-git-repository-fill"></i>
+          </div>
+          <div class="work-content">
+            <h3 class="title">Assessments</h3>
+            <p>Receive feedback and assessment on your progress through quizzes, assignments, and assessments. Our instructors provide constructive feedback to help you improve and succeed in the course.</p>
+          </div>
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="work-arrow">
+          <img class="arrow left-rotate-arrow" src="{% static 'img/shape/shape-17.png' %}" alt="Shape" />
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="single-work">
+          <img class="shape-1" src="{% static 'img/shape/shape-15.png' %}" alt="Shape" />
+
+          <div class="work-icon">
+            <i class="ri-sparkling-2-fill"></i>
+          </div>
+          <div class="work-content">
+            <h3 class="title">Interactive Activities</h3>
+            <p>Break down learning tasks into interactive activities such as quizzes, exercises, or simulations. These activities can reinforce learning objectives and provide opportunities for hands-on practice.</p>
+          </div>
+        </div>
+        <!-- Single Work End -->
+      </div>
+    </div>
+  </div>
+  <!-- How It Work End -->
+  <div class="section section-padding mt-n1">
+    <div class="container">
+      <!-- Section Title Start -->
+      <div class="section-title shape-03 text-center">
+        <h5 class="sub-title">Our Achievements</h5>
+        <h2 class="main-title">One of The Highest Rated Course <span>Tutor</span></h2>
+      </div>
+      <!-- Section Title End -->
+
+      <!-- How it Work Wrapper Start -->
+      <div class="how-it-work-wrapper">
+        <!-- Single Work Start -->
+        <div class="single-work">
+          <img class="shape-1" src="{% static 'img/shape/shape-15.png' %}" alt="Shape" />
+
+          <div class="work-icon">
+            <i class="ri-medal-fill"></i>
+          </div>
+          <div class="work-content">
+            <h3 class="title">23+ Awards</h3>
+            <p>we take pride in recognizing and celebrating excellence in education and professional development. With over 23+ prestigious awards, we honor individuals and organizations that have demonstrated achievement.</p>
+          </div>
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="work-arrow">
+          <img class="arrow" src="{% static 'img/shape/shape-17.png' %}" alt="Shape" />
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="single-work">
+          <img class="shape-2" src="{% static 'img/shape/shape-15.png' %}" alt="Shape" />
+
+          <div class="work-icon">
+            <i class="ri-git-repository-fill"></i>
+          </div>
+          <div class="work-content">
+            <h3 class="title">190 courses</h3>
+            <p>our extensive library featuring over 190 educational courses across a wide range of subjects. Each offering is carefully crafted to empower learners with valuable knowledge and practical skills for personal and professional growth.</p>
+          </div>
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="work-arrow">
+          <img class="arrow" src="{% static 'img/shape/shape-17.png' %}" alt="Shape" />
+        </div>
+        <!-- Single Work End -->
+
+        <!-- Single Work Start -->
+        <div class="single-work">
+          <img class="shape-3" src="{% static 'img/shape/shape-16.png' %}" alt="Shape" />
+
+          <div class="work-icon">
+            <i class="ri-verified-badge-line"></i>
+          </div>
+          <div class="work-content">
+            <h3 class="title">522+ Certifications</h3>
+            <p>We are proud to offer an extensive range of over 522+ certifications across various disciplines, empowering you to enhance your skills, validate your practical expertise, and advancement and personal Growth.</p>
+          </div>
+        </div>
+        <!-- Single Work End -->
+      </div>
+    </div>
+  </div>
+  <!-- How It Work End -->
+  <!-- Testimonial start -->
+  <div class="section section-padding-02 mt-n1">
+    <div class="container">
+      <!-- Section Title Start -->
+      <div class="section-title shape-03 text-center">
+        <h5 class="sub-title">Student Testimonial</h5>
+        <h2 class="main-title">Feedback From <span>Student</span></h2>
+      </div>
+      <!-- Section Title End -->
+
+      <!-- Testimonial Wrapper End -->
+      <div class="testimonial-wrapper testimonial-active">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <!-- Single Testimonial Start -->
+            <div class="single-testimonial swiper-slide">
+              <div class="testimonial-author">
+                <div class="author-thumb">
+                  <img src="{% static 'img/author/Aman.png' %}" alt="Author" />
+
+                  <i class="icofont-quote-left"></i>
+                </div>
+
+                <span class="rating-star"><span class="rating-bar" style="width: 80%;"></span></span>
+              </div>
+              <div class="testimonial-content">
+                <p>"I joined JavaGurukul with zero programming background, and today I can confidently build Java applications on my own. The hands-on approach and easy-to-understand teaching style really worked for me."</p>
+    <h4 class="name">Aman Badyal</h4>
+    <span class="designation">BCA Student, Chandigarh University</span>
+              </div>
+            </div>
+            <!-- Single Testimonial End -->
+
+            <!-- Single Testimonial Start -->
+            <div class="single-testimonial swiper-slide">
+              <div class="testimonial-author">
+                <div class="author-thumb">
+                  <img src="{% static 'img/author/Priyanka.png' %}" alt="Author" />
+
+                  <i class="icofont-quote-left"></i>
+                </div>
+
+                <span class="rating-star"><span class="rating-bar" style="width: 80%;"></span></span>
+              </div>
+              <div class="testimonial-content">
+                <p>"What I liked most about JavaGurukul was the real-world examples. The instructor made difficult topics like multithreading and Spring Boot easy to understand. It felt like learning from a mentor, not just a teacher."</p>
+    <h4 class="name">Priyanka </h4>
+    <span class="designation">Software Intern, Piosft Informatics</span>
+              </div>
+            </div>
+            <!-- Single Testimonial End -->
+
+            <!-- Single Testimonial Start -->
+            <div class="single-testimonial swiper-slide">
+              <div class="testimonial-author">
+                <div class="author-thumb">
+                  <img src="{% static 'img/author/Nikks.jpg' %}" alt="Author" />
+
+                  <i class="icofont-quote-left"></i>
+                </div>
+
+                <span class="rating-star"><span class="rating-bar" style="width: 80%;"></span></span>
+              </div>
+              <div class="testimonial-content">
+                <p>"The JavaGurukul platform gave me the confidence to face technical interviews. I revised core Java concepts and understood Spring Boot better. The practical examples and concise explanations really helped solidify my understanding before placements."</p>
+    <h4 class="name">Niharika</h4>
+    <span class="designation">Pisoft Informatics, Mohali</span>
+              </div>
+            </div>
+            <!-- Single Testimonial End -->
+          </div>
+
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <!-- Testimonial Wrapper End -->
+    </div>
+  </div>
+  <!-- Testimonial End -->
+  <!-- Download App Start -->
+  <div class="section section-padding download-section">
+    <div class="app-shape-1"></div>
+    <div class="app-shape-2"></div>
+    <div class="app-shape-3"></div>
+    <div class="app-shape-4"></div>
+
+    <div class="container">
+      <!-- Download App Wrapper Start -->
+      <div class="download-app-wrapper mt-n6">
+        <!-- Section Title Start -->
+        <div class="section-title section-title-white">
+          <h5 class="sub-title">Ready to start?</h5>
+          <h2 class="main-title">Watch our latest tutorials videos and subscribe our channel.</h2>
+        </div>
+        <!-- Section Title End -->
+
+        <img class="shape-1 animation-right" src="{% static 'img/shape/shape-14.png' %}" alt="Shape" />
+
+        <!-- Download App Button End -->
+        <div class="download-app-btn">
+          <ul class="app-btn">
+            <li>
+              <a href="https://www.youtube.com/@java-gurukul"><img src="{% static 'img/brand/youtube1.png' %}" alt="Youtube" /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/anju-malhotra-b254a712a"><img src="{% static 'img/brand/linkedin2.png' %}" alt="Linkedin" /></a>
+            </li>
+          </ul>
+        </div>
+        <!-- Download App Button End -->
+      </div>
+      <!-- Download App Wrapper End -->
+    </div>
+  </div>
+  <!-- Download App End -->
+  <!-- Brand Logo Start -->
+  <div class="section section-padding-02">
+    <div class="container">
+      <!-- Section Title Start -->
+      <div class="section-title shape-03 mb-4">
+        <h2 class="main-title text-center mt-2">Best Supporter of Java<span>गुरुकुल</span></h2>
+      </div>
+      <!-- Section Title End -->
+      <!-- Brand Logo Wrapper Start -->
+      <div class="brand-logo-wrapper">
+        <img class="shape-1" src="{% static 'img/shape/shape-19.png' %}" alt="Shape" />
+
+        <img class="shape-2 animation-round" src="{% static 'img/shape/shape-20.png' %}" alt="Shape" />
+
+        <!-- Brand Logo Start -->
+        <div class="brand-logo d-flex gap-3 justify-content-between brand-active align-items-center pt-3">
+          <div class="brand-img-cont my-1" style="width: 200px;">
+            <img src="{% static 'img/brand/classikart_logo.png' %}" class="img-fluid m-auto" alt="..." />
+          </div>
+          <div class="brand-img-cont my-1" style="width: 200px;">
+            <img src="{% static 'img/brand/pisofterp_logo.png' %}" class="img-fluid m-auto" alt="..." />
+          </div>
+          <div class="brand-img-cont my-1" style="width: 200px;">
+            <img src="{% static 'img/brand/lbn_logo.png' %}" class="img-fluid m-auto" alt="..." />
+          </div>
+          <div class="brand-img-cont my-1" style="width: 200px;">
+            <img src="{% static 'img/brand/pisoft_logo.png' %}" class="img-fluid m-auto" alt="..." />
+          </div>
+        </div>
+        <!-- Brand Logo End -->
+      </div>
+      <!-- Brand Logo Wrapper End -->
+    </div>
+  </div>
+  <!-- Brand Logo End -->
+
+  <!-- Blog Start -->
+  <div class="section section-padding mt-n1">
+    <div class="container">
+      <!-- Section Title Start -->
+      <div class="section-title shape-03 text-center">
+        <h5 class="sub-title">Latest News</h5>
+        <h2 class="main-title">Educational Tips & <span>Tricks</span></h2>
+      </div>
+      <!-- Section Title End -->
+
+      <!-- Blog Wrapper Start -->
+      <div class="blog-wrapper">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <!-- Single Blog Start -->
+            <div class="single-blog">
+              <div class="nblog-image">
+                <img src="{% static 'img/blog/ml.jpg' %}" alt="Blog" />
+              </div>
+              <div class="blog-content">
+                
+
+                <h6 class="title">Data Science and Machine Learning with Python - Hands On!</h6>
+
+                
+
+                <a href="/blog-right-sidebar/" class="btn btn-secondary btn-hover-primary">Read More</a>
+              </div>
+            </div>
+            <!-- Single Blog End -->
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <!-- Single Blog Start -->
+            <div class="single-blog">
+              <div class="nblog-image">
+                <img src="{% static 'img/blog/ux.webp' %}" alt="Blog" />
+              </div>
+              <div class="blog-content">
+                
+
+                <h6 class="title">Create Amazing Color Schemes for Your UX Design Projects</h6>
+
+                
+
+                <a href="/blog-right-sidebar/" class="btn btn-secondary btn-hover-primary">Read More</a>
+              </div>
+            </div>
+            <!-- Single Blog End -->
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <!-- Single Blog Start -->
+            <div class="single-blog">
+              <div class="nblog-image">
+                <img src="{% static 'img/blog/buisness.jpeg' %}" alt="Blog" />
+              </div>
+              <div class="blog-content">
+
+                <h6 class="title">Culture & Leadership: Strategies for a Successful Business</h6>
+
+                <a href="/blog-right-sidebar/" class="btn btn-secondary btn-hover-primary">Read More</a>
+              </div>
+            </div>
+            <!-- Single Blog End -->
+          </div>
+        </div>
+      </div>
+      <!-- Blog Wrapper End -->
+    </div>
+  </div>
+  <!-- Blog End -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the button for "Core Java" tab
+      var coreJavaButton = document.querySelector('[data-bs-target="#core-java"]')
+    
+      // Simulate click on the "Core Java" tab button
+      coreJavaButton.click()
+    })
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var mySwiper = new Swiper('.courses-tab-button', {
+        slidesPerView: 4,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: true // Set to true to enable responsiveness after user interaction
+        },
+        loop: true,
+        speed: 2300,
+        breakpoints: {
+          // When window width is <= 768px
+          100: {
+            slidesPerView: 1
+          },
+          400: {
+            slidesPerView: 2
+          },
+          760: {
+            slidesPerView: 3
+          },
+          1200: {
+            slidesPerView: 4
+          }
+        }
+      })
+    })
+  </script>
+
+  <!-- Script for Feedback Slider -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Testimonial Swiper
+      var testimonialSwiper = new Swiper('.testimonial-wrapper .swiper-container', {
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1
+          },
+          768: {
+            slidesPerView: 1
+          },
+          992: {
+            slidesPerView: 2
+          }
+        },
+        loop: true,
+        speed: 1800
+      })
+    })
+  </script>
+  <script>
+    // JavaScript code to filter courses dynamically
+    document.getElementById('searchInput').addEventListener('input', function () {
+      var searchTerm = this.value.trim().toLowerCase()
+      var courses = document.querySelectorAll('.course-div')
+    
+      courses.forEach(function (course) {
+        var courseTitle = course.querySelector('.title').innerText.toLowerCase()
+        if (courseTitle.includes(searchTerm)) {
+          course.style.display = 'block'
+        } else {
+          course.style.display = 'none'
+        }
+      })
+    })
+  </script>
+  
+{% endblock %}

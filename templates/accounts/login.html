@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Courses Start -->
+
+
+<!-- Register & Login Start -->
+<div class="section section-padding" style="margin-top: 120px;">
+    
+    <div class="container">
+        <!-- Register & Login Wrapper Start -->
+        <div class="register-login-wrapper">
+            
+            {% comment %} {% if messages%}
+            {% for message in messages %}
+            {% if message.tags == 'error'%}
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+              <div id="liveToast" class="toast fade" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header toast-head-red">
+                  <strong class="me-auto py-1 text-{{message.tags}}">{{ message }}</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body toast-body-red py-4">
+                  Please Make Sure that you are trying to login with correct credentials.!!!!
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %} {% endcomment %}
+
+            
+
+            <div class="row align-items-center"> 
+                {% comment %} {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags %}
+                        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %} {% endcomment %}
+
+
+                <div class="col-lg-6">
+                    <!-- Register & Login Images Start -->
+                    <div class="register-login-images">
+                        <div class="shape-1">
+                            <img src="{% static "img/shape/shape-26.webp" %}" alt="Shape">
+                        </div>
+                        <div class="images">
+                            <img src="{% static "img/register-login.webp" %}" alt="Register Login" style="height: 350px;">
+                        </div>
+                    </div>
+                    <!-- Register & Login Images End -->
+
+                </div>
+                <div class="col-lg-6">
+                    <!-- Register & Login Form Start -->
+                    <div class="register-login-form">
+                         
+                        <h3 class="title">Login <span>Now</span></h3>
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert {{ message.tags }} mb-0 mt-2 d-flex align-items-center" role="alert">
+                            <div>
+                                {{ message }}
+                            </div>
+                          </div>
+                          {% endfor %}
+                        {% endif %}
+                        <div class="form-wrapper pt-0">
+                            <form method="post" action="{% url 'login' %}">
+                                {% csrf_token %}
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <input type="text" placeholder="Username" name="username" id="username">
+                                </div>
+                                <!-- Single Form End -->
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <input type="password" placeholder="Password" name="password" id="password">
+                                </div>
+                                <!-- Single Form End -->
+                                <!-- Single Form Start -->
+
+                               
+
+                                <div class="single-form ">
+                                    <button class="btn btn-secondary btn-outline w-100" >Login</button>
+                                    {% comment %} <button class="btn btn-primary btn-hover-dark w-100">Login</button>
+                                    <a class="btn btn-secondary btn-outline w-100" href="#">Login with Google</a> {% endcomment %}
+                                </div>
+
+                                <div class="single-form ">
+                                    <a class="p-0 m-0" style="float: left; font-size: 14px;" href="{% url 'register' %}" >
+                                        Don't Have Account?
+                                    </a>
+                                    <a class="p-0 m-0" href={% url 'password_reset' %}   style="float: right; font-size: 14px;"> Reset Password</a>
+
+                                </div>
+                                <!-- Single Form End -->
+                            </form>
+                            
+                        
+                        </div>
+                    </div>
+                    <!-- Register & Login Form End -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Register & Login Wrapper End -->
+
+    </div>
+</div>
+<!-- Register & Login End -->
+<!-- Download App Start -->
+<div class="section section-padding download-section">
+
+    <div class="app-shape-1"></div>
+    <div class="app-shape-2"></div>
+    <div class="app-shape-3"></div>
+    <div class="app-shape-4"></div>
+
+    <div class="container">
+
+        <!-- Download App Wrapper Start -->
+        <div class="download-app-wrapper mt-n6">
+
+            <!-- Section Title Start -->
+            <div class="section-title section-title-white">
+                <h5 class="sub-title">Ready to start?</h5>
+                <h2 class="main-title">Download our mobile app. for easy to start your course.</h2>
+            </div>
+            <!-- Section Title End -->
+
+            <img class="shape-1 animation-right" src="{% static "img/shape/shape-14.png" %}" alt="Shape">
+
+            <!-- Download App Button End -->
+            <div class="download-app-btn">
+                <ul class="app-btn">
+                    <li><a href="#"><img src="{% static "img/google-play.png" %}" alt="Google Play"></a></li>
+                    <li><a href="#"><img src="{% static "img/app-store.png" %}" alt="App Store"></a></li>
+                </ul>
+            </div>
+            <!-- Download App Button End -->
+
+        </div>
+        <!-- Download App Wrapper End -->
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var toastEl = document.getElementById('liveToast');
+        var toast = new bootstrap.Toast(toastEl);
+        toast.show();
+    }); 
+</script>
+{% endblock content%}

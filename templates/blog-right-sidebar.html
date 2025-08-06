@@ -1,0 +1,649 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- Page Banner Start -->
+  <div class="section page-banner">
+    <img class="shape-1 animation-round" src="{% static 'img/shape-8.webp' %}" alt="Shape" />
+
+    <img class="shape-2" src="{% static 'img/shape/shape-23.webp' %}" alt="Shape" />
+
+    <div class="container">
+      <!-- Page Banner Start -->
+      <div class="page-banner-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li class="active">Blog</li>
+        </ul>
+        <h2 class="title">Our <span>Blog</span></h2>
+      </div>
+      <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+      <img class="icon-shape-1 animation-left" src="{% static 'img/shape-5.webp' %}" alt="Shape" />
+
+      <div class="box-content">
+        <div class="box-wrapper">
+          <i class="ri-medal-line"></i>
+        </div>
+      </div>
+
+      <img class="icon-shape-2" src="{% static 'img/shape/shape-6.png' %}" alt="Shape" />
+    </div>
+    <!-- Shape Icon Box End -->
+
+    <img class="shape-3" src="{% static 'img/shape/shape-24.webp' %}" alt="Shape" />
+
+    <img class="shape-author" src="{% static 'img/author/author-11.webp' %}" alt="Shape" />
+  </div>
+  <!-- Page Banner End -->
+  <!-- Blog Start -->
+  <div class="section section-padding mt-n10">
+    <div class="container">
+      <div class="row gx-10">
+        <div class="col-lg-8">
+          <!-- Blog Wrapper Start -->
+          <div class="blog-wrapper">
+            <div class="row">
+              <div class="col-md-6">
+                <!-- Single Blog Start -->
+                <div class="single-blog">
+                  <div class="nblog-image">
+                    <img src="{% static 'img/blog/1Aiml.webp' %}" alt="Blog" />
+                  </div>
+                  <div class="blog-content">
+                    <h6 class="title">Top 5 AI Tools Changing the Industry</h6>
+                    <p>Artificial Intelligence is redefining how industries operate—from automation and...</p>
+
+                    <a href="#" class="btn btn-secondary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Top 5 AI Tools Changing the Industry" data-author="Andrew Ng" data-content="Artificial Intelligence is redefining how industries operate—from automation and customer service to analytics and innovation. In this curated roundup, we highlight the top 5 AI tools that are pushing boundaries and shaping the future of intelligent systems.&lt;br&gt;
+
+                            <strong>1. ChatGPT by OpenAI</strong><br>
+                            OpenAI’s ChatGPT has revolutionized conversational interfaces. Leveraged by developers, educators, marketers, and customer service teams, its human-like text generation has opened doors for creative automation and productivity enhancement across verticals.
+
+                            <br><br>
+
+                            <strong>2. TensorFlow by Google</strong><br>
+                            Google’s TensorFlow remains a powerhouse for deep learning. This open-source library is the backbone of countless AI products—from medical imaging to stock prediction—allowing for large-scale model development and seamless deployment across platforms.
+
+                            <br><br>
+
+                            <strong>3. IBM Watson</strong><br>
+                            IBM’s Watson offers enterprise-level AI capabilities, excelling in fields that demand natural language processing and cognitive analytics. It plays a pivotal role in sectors like law, healthcare, and finance, where data-driven decisions and insights are critical.
+
+                            <br><br>
+
+                            <strong>4. Azure AI by Microsoft</strong><br>
+                            Microsoft’s Azure AI suite empowers organizations to embed intelligence into applications with minimal coding. From vision and speech to language and decision-making APIs, Azure is trusted by Fortune 500 companies and startups alike for scalable AI integration.
+
+                            <br><br>
+
+                            <strong>5. DataRobot</strong><br>
+                            DataRobot is transforming enterprise AI with its automated machine learning platform. Designed for both data scientists and business users, it allows for rapid model creation, validation, and deployment—ensuring AI accessibility without compromising accuracy.
+
+                            <br><br>
+
+                            <strong>Why It Matters:</strong><br>
+                            The AI landscape is vast, but these tools stand out for their real-world impact, scalability, and ease of adoption. As industries lean more into AI-driven innovation, knowing and leveraging the right tools becomes a strategic advantage.
+
+                            <br><br>
+
+                            <strong>Conclusion:</strong><br>
+                            These platforms are not just shaping the future—they’re building it. Whether you're a startup founder, CTO, or AI enthusiast, mastering these tools can accelerate your journey toward smarter, faster, and more efficient digital solutions.">Read More</a>
+
+                    <!-- Modal Structure -->
+                    <div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content bg-light text-dark">
+                          <div class="modal-header border-0">
+                            <h5 class="modal-title" id="blogModalLabel" style="font-size: 24px; font-weight: 600; color: #198754; text-align: center; width: 100%;"></h5>
+                            <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p id="modalAuthor" style="font-size: 14px; color: #666; text-align: center;"></p>
+                            <div id="modalContent" class="mt-3"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Single Blog End -->
+              </div>
+              <div class="col-md-6">
+                <!-- Single Blog Start -->
+                <div class="single-blog">
+                  <div class="nblog-image">
+                    <img src="{% static 'img/blog/blockchain.png' %}" alt="Blog" />
+                  </div>
+                  <div class="blog-content">
+                    <h6 class="title">Getting Started with Blockchain 4.0</h6>
+                    <p>Blockchain 4.0 represents the most advanced generation of decentralized infrastructure...</p>
+
+                    <a href="#" class="btn btn-secondary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Getting Started with Blockchain 4.0" data-author="Don Tapscott" data-content="Blockchain 4.0 represents the most advanced generation of decentralized infrastructure—engineered not just for crypto, but for seamless enterprise adoption. As businesses move toward trustless, secure, and efficient systems, Blockchain 4.0 offers a transformative edge.&lt;br&gt;
+
+                        <strong>What is Blockchain 4.0?</strong><br>
+                        While earlier blockchain generations focused on decentralization and cryptographic integrity, Blockchain 4.0 introduces enterprise-grade features like ultra-fast consensus mechanisms, interoperable smart contracts, and integration-ready APIs that make real-world implementation scalable and practical.
+
+                        <br><br>
+
+                        <strong>Key Features:</strong><br>
+                        ✔️ <strong>Enterprise Integration:</strong> Designed with ERP and legacy system compatibility.<br>
+                        ✔️ <strong>Smart Contract Upgrades:</strong> Allow logic modification without breaking consensus.<br>
+                        ✔️ <strong>High TPS (Transactions Per Second):</strong> Outpaces Blockchain 3.0 with lightning-fast processing.<br>
+                        ✔️ <strong>AI + IoT Integration:</strong> Enabling real-time autonomous systems and predictive analytics.
+
+                        <br><br>
+
+                        <strong>Why Blockchain 4.0 Matters:</strong><br>
+                        This new wave solves the ‘blockchain trilemma’—security, scalability, and decentralization—making it suitable for high-volume industries like supply chain, healthcare, and finance. With smart governance layers and sidechain capabilities, enterprises can build private or hybrid networks without compromise.
+
+                        <br><br>
+
+                        <strong>Real-World Adoption:</strong><br>
+                        Global corporations such as IBM, Maersk, and Oracle are already piloting Blockchain 4.0 infrastructures to reimagine asset tracking, data integrity, and cross-border payments. It’s no longer about “if” you’ll adopt blockchain—it’s about “how fast” you can leverage it to stay competitive.
+
+                        <br><br>
+
+                        <strong>Conclusion:</strong><br>
+                        Blockchain 4.0 is not a buzzword—it’s a blueprint for the decentralized enterprise future. For leaders, technologists, and innovators, now is the time to invest in infrastructure that unlocks transparency, trust, and transformation at scale.">Read More</a>
+                  </div>
+                </div>
+                <!-- Single Blog End -->
+              </div>
+              <div class="col-md-6">
+                <!-- Single Blog Start -->
+                <div class="single-blog">
+                  <div class="nblog-image">
+                    <img src="{% static 'img/blog/web3.webp' %}" alt="Blog" />
+                  </div>
+                  <div class="blog-content">
+                    <h6 class="title">Why Web3 is More Than a Buzzword</h6>
+                    <p>Web3 represents a paradigm shift—a transition from centralized digital platforms to decentra...</p>
+
+                    <a href="#" class="btn btn-secondary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Why Web3 is More Than a Buzzword" data-author="Vitalik Buterin" data-content="Web3 represents a paradigm shift—a transition from centralized digital platforms to decentralized, trustless systems where individuals regain control over their digital lives.&lt;br&gt;
+
+                        <strong>The Web3 Vision:</strong><br>
+                        At its core, Web3 is about creating a user-owned internet. Through the use of blockchain, smart contracts, and decentralized applications (dApps), users can interact and transact without intermediaries. It's the foundation for a more transparent, censorship-resistant, and participatory web.
+
+                        <br><br>
+
+                        <strong>Key Pillars of Web3:</strong><br>
+                        ✔️ <strong>Decentralization:</strong> Eliminating the need for centralized servers or gatekeepers.<br>
+                        ✔️ <strong>Tokenization:</strong> Using cryptocurrencies and NFTs to create new economic models.<br>
+                        ✔️ <strong>Self-Sovereign Identity:</strong> Giving users ownership over their digital identity and credentials.<br>
+                        ✔️ <strong>On-Chain Governance:</strong> Empowering communities to participate in protocol-level decision-making through DAOs.
+
+                        <br><br>
+
+                        <strong>Real-World Applications:</strong><br>
+                        • DeFi (Decentralized Finance) platforms like Uniswap and Aave have redefined lending and trading.<br>
+                        • Blockchain-based social media platforms offer content ownership and monetization rights.<br>
+                        • Web3-enabled games allow players to earn, own, and trade in-game assets.<br>
+                        • IPFS and Filecoin introduce decentralized file storage and access control.
+
+                        <br><br>
+
+                        <strong>Challenges Ahead:</strong><br>
+                        While Web3 offers immense promise, scalability, UX, regulation, and energy efficiency remain hurdles. However, ongoing innovations like Layer 2 protocols and zero-knowledge proofs aim to solve these bottlenecks.
+
+                        <br><br>
+
+                        <strong>Conclusion:</strong><br>
+                        Web3 is not just a buzzword—it's a movement reshaping how we trust, transact, and interact online. Whether you're a developer, investor, or user, understanding Web3 is essential to staying relevant in the next chapter of the internet.">Read More</a>
+                  </div>
+                </div>
+                <!-- Single Blog End -->
+              </div>
+              <div class="col-md-6">
+                <!-- Single Blog Start -->
+                <div class="single-blog">
+                  <div class="nblog-image">
+                    <img src="{% static 'img/blog/promt.jpeg' %}" alt="Blog" />
+                  </div>
+                  <div class="blog-content">
+                    <h6 class="title">Mastering Prompt Engineering in GenAI</h6>
+                    <p>Prompt Engineering is emerging as a critical skill in the era of Generative AI—empowering...</p>
+
+                    <a href="#" class="btn btn-secondary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Mastering Prompt Engineering in GenAI" data-author="Andrej Karpathy" data-content="Prompt Engineering is emerging as a critical skill in the era of Generative AI—empowering developers, analysts, and creatives to shape AI outputs with surgical precision.&lt;br&gt;
+
+                        <strong>Why Prompt Engineering Matters:</strong><br>
+                        As large language models like GPT-4, Claude, and Gemini scale in complexity, the ability to communicate with them effectively becomes the new programming layer. Well-structured prompts reduce ambiguity, enhance output quality, and improve response consistency across a wide array of applications.
+
+                        <br><br>
+
+                        <strong>Core Techniques:</strong><br>
+                        ✔️ <strong>Role-Play Framing:</strong> Direct the AI by assigning specific identities (e.g., “You are a legal advisor”).<br>
+                        ✔️ <strong>Instructional Prompts:</strong> Break down tasks step-by-step to guide reasoning.<br>
+                        ✔️ <strong>Few-Shot & Zero-Shot Learning:</strong> Use curated examples to improve performance on new tasks.<br>
+                        ✔️ <strong>Chain-of-Thought (CoT):</strong> Encourage reasoning by asking the model to explain its thinking process.
+
+                        <br><br>
+
+                        <strong>Use Cases Across Industries:</strong><br>
+                        From automating legal contracts and medical summarizations to generating production-ready code and writing personalized marketing copy—prompt engineering is now indispensable. Product teams use it to build smarter chatbots, content creators rely on it for ideation, and analysts use it to interpret data faster.
+
+                        <br><br>
+
+                        <strong>Beyond Text: Multimodal Prompting:</strong><br>
+                        With models like GPT-4o and Gemini integrating images, audio, and video, prompt engineering is evolving into a multimodal discipline. You’re no longer just writing for a chatbot—you’re orchestrating a collaborative intelligence system.
+
+                        <br><br>
+
+                        <strong>Conclusion:</strong><br>
+                        In the GenAI age, prompt engineering is the UX of artificial intelligence. Learning to master it doesn’t just unlock better answers—it unlocks competitive advantage. Whether you're a product leader or a developer, this is your bridge to building smarter AI experiences.">Read More</a>
+                  </div>
+                </div>
+                <!-- Single Blog End -->
+              </div>
+              <div class="col-md-6">
+                <!-- Single Blog Start -->
+                <div class="single-blog">
+                  <div class="nblog-image">
+                    <img src="{% static 'img/blog/DS.jpg' %}" alt="Blog" />
+                  </div>
+                  <div class="blog-content">
+                    <h6 class="title">Exploring Python's Role in Data Science 2025</h6>
+                    <p>Python continues to lead the charge in the Data Science landscape, thanks to its intuitive...</p>
+
+                    <a href="#" class="btn btn-secondary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Exploring Python's Role in Data Science 2025" data-author="Wes McKinney" data-content="Python continues to lead the charge in the Data Science landscape, thanks to its intuitive syntax, robust ecosystem, and unmatched flexibility. As we approach 2025, its dominance remains unshaken across industries ranging from finance and healthcare to retail and autonomous systems.&lt;br&gt;
+
+                            <strong>1. Comprehensive Ecosystem:</strong><br>
+                            Python offers a mature, ever-expanding toolkit of libraries that cater to all stages of data workflows—<strong>Pandas</strong> for data manipulation, <strong>NumPy</strong> for numerical computing, <strong>Matplotlib</strong> and <strong>Seaborn</strong> for visualization, and <strong>Scikit-learn</strong>, <strong>TensorFlow</strong>, and <strong>PyTorch</strong> for machine learning and deep learning.
+
+                            <br><br>
+
+                            <strong>2. Developer-Friendly Syntax:</strong><br>
+                            Python’s readable and concise code structure enables rapid prototyping and experimentation—essential in an era where time-to-insight is a competitive advantage.
+
+                            <br><br>
+
+                            <strong>3. Interoperability & Integration:</strong><br>
+                            Python integrates effortlessly with big data technologies (like Apache Spark), APIs, databases (SQL, NoSQL), and BI tools (Power BI, Tableau), making it a unifying language across data pipelines.
+
+                            <br><br>
+
+                            <strong>4. Thriving Community & Open Source Innovation:</strong><br>
+                            The global Python community, backed by major organizations and open-source contributors, ensures continuous improvement, vast documentation, and strong peer support—making it ideal for both beginners and advanced practitioners.
+
+                            <br><br>
+
+                            <strong>5. Versatility Across Use Cases:</strong><br>
+                            Python powers real-world applications including fraud detection, recommendation engines, customer segmentation, healthcare diagnostics, and climate modeling. Its flexibility supports everything from ETL to AI deployment.
+
+                            <br><br>
+
+                            <strong>Conclusion:</strong><br>
+                            In 2025 and beyond, Python isn’t just a programming language—it’s the backbone of data science innovation. Whether you’re building predictive models, visualizing insights, or deploying AI at scale, Python remains the most strategic choice for data-driven organizations.">Read More</a>
+                  </div>
+                </div>
+                <!-- Single Blog End -->
+              </div>
+              <div class="col-md-6">
+                <!-- Single Blog Start -->
+                <div class="single-blog">
+                  <div class="nblog-image">
+                    <img src="{% static 'img/blog/edge.png' %}" alt="Blog" />
+                  </div>
+                  <div class="blog-content">
+                    <h6 class="title">Edge AI: Next-Gen Tech for Smart Devices 2025</h6>
+                    <p>Edge AI is redefining the technological landscape by embedding artificial intelligence...</p>
+
+                    <a href="#" class="btn btn-secondary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Edge AI: Next-Gen Tech for Smart Devices 2025" data-author="Daniel Rausch" data-content="Edge AI is redefining the technological landscape by embedding artificial intelligence directly into smart devices, enabling them to process data locally and make decisions without relying on cloud infrastructure. This convergence of edge computing and AI marks a significant shift in how we approach speed, security, and autonomy in modern tech.&lt;br&gt;
+
+                        <strong>1. Ultra-Low Latency Decision Making:</strong><br>
+                        From autonomous vehicles to surveillance systems, Edge AI empowers real-time responses by eliminating the delay of cloud round-trips. Devices can now act instantly on visual, auditory, or sensor input—crucial for life-critical and high-efficiency operations.
+
+                        <br><br>
+
+                        <strong>2. Enhanced Data Privacy & Control:</strong><br>
+                        By keeping data processing local, Edge AI minimizes the risk of exposure. This is a major advancement for privacy-conscious industries like healthcare, defense, and finance, where regulatory compliance and confidentiality are paramount.
+
+                        <br><br>
+
+                        <strong>3. Optimized Bandwidth and Cost Efficiency:</strong><br>
+                        Edge AI reduces dependence on cloud servers, thereby cutting down on data transmission, storage, and related costs. It enables high-scale IoT deployments in remote or bandwidth-constrained environments.
+
+                        <br><br>
+
+                        <strong>4. Industry Applications:</strong><br>
+                        Leading-edge implementations include smart thermostats, predictive maintenance in manufacturing, retail footfall analysis, wearable health diagnostics, and voice assistants. These systems adapt on-the-fly, personalizing user experience while maintaining operational efficiency.
+
+                        <br><br>
+
+                        <strong>5. The Road Ahead:</strong><br>
+                        With advancements in on-device AI chips (e.g., Apple Neural Engine, NVIDIA Jetson), and lightweight neural networks (like MobileNet), Edge AI is entering an era of exponential growth—fueling the next wave of innovation in smart tech, robotics, and AR/VR.
+
+                        <br><br>
+
+                        <strong>Conclusion:</strong><br>
+                        Edge AI is not a futuristic concept—it’s today’s reality. By decentralizing intelligence and accelerating insights at the edge, it’s unlocking transformative capabilities in our homes, cities, and industries. For developers, engineers, and enterprises, the future is no longer in the cloud alone—it’s on the edge.">Read More</a>
+                  </div>
+                </div>
+                <!-- Single Blog End -->
+              </div>
+              <div class="col-md-6">
+                <!-- Single Blog Start -->
+                <div class="single-blog">
+                  <div class="nblog-image">
+                    <img src="{% static 'img/blog/ml.jpg' %}" alt="Blog" />
+                  </div>
+                  <div class="blog-content">
+                    <h6 class="title">Data Science and Machine Learning with Python - Hands On!</h6>
+                    <p>In today’s data-driven world, Python has emerged as the de facto language for Data ...</p>
+
+                    <a href="#" class="btn btn-secondary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Data Science and Machine Learning with Python - Hands On!" data-author="Andreas C. Müller" data-content="In today’s data-driven world, Python has emerged as the de facto language for Data Science and Machine Learning. Its rich ecosystem of libraries and ease of use empowers both aspiring analysts and seasoned engineers to solve real-world problems with data.&lt;br&gt;
+
+                        <strong>1. Python’s Comprehensive Toolkit:</strong><br>
+                        Python offers an end-to-end pipeline—from data wrangling with Pandas and NumPy, to visualization with Seaborn and Matplotlib, all the way to predictive modeling. Its readable syntax and flexibility accelerate rapid prototyping and analysis.
+
+                        <br><br>
+
+                        <strong>2. Applied Machine Learning with Scikit-Learn:</strong><br>
+                        Scikit-learn, a foundational library in the ML ecosystem, allows for seamless implementation of supervised and unsupervised algorithms. Whether it's classification, regression, or clustering, the consistent API and intuitive design make model training both powerful and accessible.
+
+                        <br><br>
+
+                        <strong>3. Feature Engineering and Preprocessing:</strong><br>
+                        Crafting high-quality features is key to model success. Python makes it easy to scale, encode, impute, and transform features using dedicated preprocessing modules—empowering practitioners to extract real value from messy datasets.
+
+                        <br><br>
+
+                        <strong>4. Model Evaluation and Optimization:</strong><br>
+                        With tools like cross-validation, ROC curves, confusion matrices, and grid/randomized search, Python helps you evaluate and fine-tune models efficiently, ensuring robustness and generalization across unseen data.
+
+                        <br><br>
+
+                        <strong>5. Practical Project Deployment:</strong><br>
+                        Turn theory into action with hands-on projects like customer churn prediction, image classification, or price forecasting. Python's integration with Flask, Streamlit, or FastAPI supports building and deploying ML apps that deliver real business value.
+
+                        <br><br>
+
+                        <strong>Conclusion:</strong><br>
+                        As articulated by Andreas Müller, Python democratizes machine learning, making cutting-edge data techniques accessible to a broader audience. Whether you're breaking into the field or scaling enterprise-grade solutions, Python equips you to lead with data and innovation.">Read More</a>
+                  </div>
+                </div>
+                <!-- Single Blog End -->
+              </div>
+              <div class="col-md-6">
+                <!-- Single Blog Start -->
+                <div class="single-blog">
+                  <div class="nblog-image">
+                    <img src="{% static 'img/blog/ux.webp' %}" alt="Blog" />
+                  </div>
+                  <div class="blog-content">
+                    <h6 class="title">Create Amazing Color Schemes for Your UX Design Projects</h6>
+                    <p>Color isn’t just a visual choice—it’s a strategic tool in UX design that shapes how users feel...</p>
+                    <a href="#" class="btn btn-secondary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Create Amazing Color Schemes for Your UX Design Projects" data-author="Sarah Doody" data-content="Color isn’t just a visual choice—it’s a strategic tool in UX design that shapes how users feel, behave, and interact with your product. As Sarah Doody, UX expert and design strategist, often emphasizes: thoughtful color use enhances usability, accessibility, and emotional connection. &lt;br&gt;
+
+                        <br><br>
+
+                        <strong>1. Master Color Psychology:</strong><br>
+                        Colors communicate. Blue evokes trust, red signals urgency, yellow suggests optimism. Strategic color usage aligns your interface with the brand voice and influences user actions intuitively.
+
+                        <br><br>
+
+                        <strong>2. Apply Core Color Theory:</strong><br>
+                        Understand relationships on the color wheel—complementary, triadic, monochromatic—to create balance and harmony. These principles help define pleasing and effective palettes that resonate with your audience.
+
+                        <br><br>
+
+                        <strong>3. Prioritize Accessibility:</strong><br>
+                        Color is not universal. Contrast, brightness, and readability matter. Follow WCAG guidelines and use tools like Stark or Contrast Checker to ensure your palette is inclusive and readable by all users, including those with visual impairments.
+
+                        <br><br>
+
+                        <strong>4. Create a Scalable Color System:</strong><br>
+                        A consistent system—built on primary, secondary, and neutral tones—strengthens brand cohesion. Apply this system across UI elements like buttons, backgrounds, and typography for clarity and recognition.
+
+                        <br><br>
+
+                        <strong>5. Leverage Design Tools & Plugins:</strong><br>
+                        Enhance productivity with Figma plugins, Adobe Color, and tools like Coolors or Material Design Palette. These help you visualize, refine, and test palettes in real time for various devices and lighting conditions.
+
+                        <br><br>
+
+                        <strong>Conclusion:</strong><br>
+                        Great UX starts with intentional decisions—and color is one of the most impactful. When thoughtfully applied, it guides the user, reinforces your message, and creates memorable experiences. In today’s competitive landscape, mastering color is a non-negotiable design skill.">Read More</a>
+                  </div>
+                </div>
+                <!-- Single Blog End -->
+              </div>
+            </div>
+          </div>
+          <!-- Blog Wrapper End -->
+        </div>
+        <div class="col-lg-4">
+          <!-- Blog Sidebar Start -->
+          <div class="sidebar">
+            <!-- Sidebar Widget Search Start -->
+            <div class="sidebar-widget widget-search">
+              <h5 class="widget-title"> Explore More Categories</h5>
+            </div>
+            <!-- Sidebar Widget Search End -->
+
+            <!-- Sidebar Widget Category Start -->
+            <div class="sidebar-widget">
+              <h4 class="widget-title">Post Category</h4>
+
+              <div class="widget-category">
+                <ul class="category-list">
+                  <li>
+                    <a href="#">Ai/Ml</a>
+                  </li>
+                  <li>
+                    <a href="#">Block Chain</a>
+                  </li>
+                  <li>
+                    <a href="#">Python</a>
+                  </li>
+                  <li>
+                    <a href="#">Web3</a>
+                  </li>
+                  <li>
+                    <a href="#">UX Design</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Sidebar Widget Category End -->
+
+            <!-- Sidebar Widget Post Start -->
+            <div class="sidebar-widget">
+              <h4 class="widget-title">Recent Post</h4>
+
+              <div class="widget-post">
+                <ul class="post-items">
+                  <li>
+                    <!-- Sidebar Widget Post Start -->
+                    <div class="single-post">
+                      <div class="post-thumb">
+                        <img src="{% static 'img/blog/color.webp' %}" alt="Post" style="width: 70px; height: 70px;  border-radius: 50%;  -o-object-position: center; object-position: center; -o-object-fit: cover; object-fit: cover;" />
+                      </div>
+                      <div class="post-content">
+                        <h5 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Create Amazing Color Schemes for Your UX Design Projects" data-author="Don Norman" data-content="Color is a cornerstone of user experience design, shaping perception, usability, and emotional resonance. As Don Norman, a pioneer in human-centered design, emphasizes, the effective use of color enhances communication, trust, and navigation across digital interfaces.<br><br><strong>1. Understand Color Psychology:</strong><br>Colors influence human emotions and decisions—blue conveys trust, red signals urgency, and green suggests calm or success. Designers must align color selection with brand intent and user expectations.<br><br><strong>2. Leverage Color Theory:</strong><br>Use complementary, analogous, and triadic color schemes. Tools like Adobe Color and Coolors help create harmonious combinations.<br><br><strong>3. Prioritize Accessibility:</strong><br>Ensure WCAG contrast compliance for inclusive UX. Use tools like WebAIM Contrast Checker.<br><br><strong>4. Scalable Color Systems:</strong><br>Define and maintain consistent primary, secondary, and accent colors across UI components.<br><br><strong>5. Tools:</strong><br>Leverage Figma, Material Palette, and plugins for palette design.<br><br><strong>Conclusion:</strong><br>Good color design enhances usability, trust, and emotional impact. Mastering this skill elevates your UX.">Create Amazing Color Schemes Design</a></h5>
+                      </div>
+                    </div>
+                    <!-- Sidebar Widget Post End -->
+                  </li>
+                  <li>
+                    <!-- Sidebar Widget Post Start -->
+                    <div class="single-post">
+                      <div class="post-thumb">
+                        <img src="{% static 'img/blog/ml.jpeg' %}" alt="Post" style="width: 70px; height: 70px;  border-radius: 50%;  -o-object-position: center; object-position: center; -o-object-fit: cover; object-fit: cover;" />
+                      </div>
+                      <div class="post-content">
+                        <h5 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Data Science and Machine Learning with Python - Hands On!" data-author="Cassie Kozyrkov" data-date="12 March, 2025" data-content="Master the real-world implementation of Data Science and Machine Learning using Python.<br><br>
+
+                            <strong>1. Python as a Data Science Powerhouse:</strong><br>
+                            From libraries like Pandas and NumPy for data wrangling to Matplotlib and Seaborn for visualization, Python streamlines the data science workflow.<br><br>
+
+                            <strong>2. Model Building with Scikit-Learn:</strong><br>
+                            Utilize Scikit-Learn to build regression, classification, and clustering models with minimal code and maximum flexibility.<br><br>
+
+                            <strong>3. Feature Engineering & Preprocessing:</strong><br>
+                            Clean and prepare your data using best practices like handling missing values, encoding categorical variables, and scaling features.<br><br>
+
+                            <strong>4. Evaluation & Optimization:</strong><br>
+                            Use confusion matrices, cross-validation, ROC curves, and hyperparameter tuning to improve model performance.<br><br>
+
+                            <strong>5. Capstone Projects:</strong><br>
+                            Work on real-world problems like fraud detection, churn prediction, and customer segmentation to strengthen your portfolio.<br><br>
+
+                            <strong>Conclusion:</strong><br>
+                            With hands-on practice and Python’s ecosystem, you’ll build a strong foundation in data-driven decision-making and machine learning application.">Data Science Machine Learning with Python</a></h5>
+                      </div>
+                    </div>
+                    <!-- Sidebar Widget Post End -->
+                  </li>
+                  <li>
+                    <!-- Sidebar Widget Post Start -->
+                    <div class="single-post">
+                      <div class="post-thumb">
+                        <img src="{% static 'img/blog/buisness.jpeg' %}" alt="Post" style="width: 70px; height: 70px;  border-radius: 50%;  -o-object-position: center; object-position: center; -o-object-fit: cover; object-fit: cover;" /> 
+                      </div>
+                      <div class="post-content">
+                        <h5 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Leadership: Strategies for Business" data-author="Simon Sinek" data-date="8 February, 2025" data-content="Effective leadership is the cornerstone of a successful business, driving vision, culture, and performance. Drawing insights from Simon Sinek's leadership philosophy, this article highlights actionable strategies for leading with purpose.<br><br>
+
+                                <strong>1. Lead with 'Why':</strong><br>
+                                Great leaders inspire action by starting with a clear 'Why'—a purpose beyond profit that aligns employees and customers.<br><br>
+
+                                <strong>2. Build Trust Through Consistency:</strong><br>
+                                Trust isn't built overnight. It's the result of consistent behavior, transparency, and accountability within teams and with stakeholders.<br><br>
+
+                                <strong>3. Empower Teams:</strong><br>
+                                Empowering individuals with ownership, autonomy, and recognition fosters innovation and intrinsic motivation.<br><br>
+
+                                <strong>4. Adapt to Change:</strong><br>
+                                Modern leaders embrace agility. They encourage learning, experimentation, and adaptability in the face of technological and market disruption.<br><br>
+
+                                <strong>5. Communicate Vision Clearly:</strong><br>
+                                Strategic leaders communicate a compelling vision and align it with goals, metrics, and values that resonate across the organization.<br><br>
+
+                                <strong>Conclusion:</strong><br>
+                                True leadership isn't about titles—it's about inspiring others to perform at their best and creating cultures that thrive on trust, growth, and purpose.">Leadership: Strategies for Business</a></h5>
+                      </div>
+                    </div>
+                    <!-- Sidebar Widget Post End -->
+                  </li>
+                  <li>
+                    <!-- Sidebar Widget Post Start -->
+                    <div class="single-post">
+                      <div class="post-thumb">
+                        <img src="{% static 'img/blog/blog-04.webp' %}" alt="Post" style="width: 70px; height: 70px;  border-radius: 50%;  -o-object-position: center; object-position: center; -o-object-fit: cover; object-fit: cover;" />
+                      </div>
+                      <div class="post-content">
+                        <h5 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-title="Illustrating Badges & Geometric Shapes" data-author="Paul Rand" data-date="10 February, 2025" data-content="Badges and geometric shapes are timeless design elements used in branding, UI design, and illustration. As Paul Rand, one of the most influential graphic designers of the 20th century, emphasized, simplicity and structure are key to visual communication.<br><br>
+
+                                <strong>1. Shape Language:</strong><br>
+                                Shapes convey meaning — circles represent unity, squares suggest stability, and triangles symbolize direction or tension. Using them strategically can anchor your visual identity.<br><br>
+
+                                <strong>2. Badge Composition:</strong><br>
+                                Badges often combine typography, icons, and geometric containers to create compact, symbolic visuals used in apps, gamification, or certifications.<br><br>
+
+                                <strong>3. Minimalism with Impact:</strong><br>
+                                Geometric illustrations embrace clean lines and symmetry, drawing attention without overwhelming users. Think Bauhaus-style clarity in modern design.<br><br>
+
+                                <strong>4. Tools and Techniques:</strong><br>
+                                Software like Adobe Illustrator, Figma, and Procreate support precision design. Use grids, guides, and shape tools for perfect alignment and balance.<br><br>
+
+                                <strong>5. Branding Use Cases:</strong><br>
+                                From badges on loyalty cards to icon systems in mobile apps, geometric design adds polish and professionalism when executed with intention.<br><br>
+
+                                <strong>Conclusion:</strong><br>
+                                Mastering badges and geometric illustration sharpens your ability to communicate visually and create aesthetically cohesive designs across platforms.">Illustrating Badges & Geometric Shapes</a></h5>
+                      </div>
+                    </div>
+                    <!-- Sidebar Widget Post End -->
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Sidebar Widget Post End -->
+
+            <!-- Sidebar Widget Tags Start -->
+            <div class="sidebar-widget">
+              <h4 class="widget-title">Popular Tags</h4>
+
+              <div class="widget-tags">
+                <ul class="tags-list">
+                  <li>
+                    Java
+                  </li>
+                  <li>
+                    Spring
+                  </li>
+
+                  <li>
+                    JPA
+                  </li>
+                  <li>
+                    JSP
+                  </li>
+
+                  <li>
+                    Thymeleaf
+                  </li>
+                  <li>
+                    Servlets
+                  </li>
+                  <li>
+                    Hibernate
+                  </li>
+
+                  <li>
+                    SpringBoot
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Sidebar Widget Tags End -->
+
+            <!-- Sidebar Widget Share Start -->
+            <div class="sidebar-widget">
+              <h4 class="widget-title">Share Course:</h4>
+
+              <ul class="social">
+                <li>
+                  <a href="https://www.facebook.com/share/1BzMZ3X7DD/?mibextid=wwXIfr"><i class="ri-facebook-circle-line"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/anju-malhotra-b254a712a"><i class="ri-linkedin-fill"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@java-gurukul"><i class="ri-youtube-line"></i></a>
+                </li>
+                {% comment %} <li>
+                  <a href="#"><i class="ri-skype-line"></i></a>
+                </li> {% endcomment %}
+                <li>
+                  <a href="https://www.instagram.com/java.gurukul?igsh=MWFzeGxnb203ZzRubA%3D%3D&utm_source=qr"><i class="ri-instagram-line"></i></a>
+                </li>
+              </ul>
+            </div>
+            <!-- Sidebar Widget Share End -->
+          </div>
+          <!-- Blog Sidebar End -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Blog End -->
+  <script>
+    const blogModal = document.getElementById('blogModal')
+    blogModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget
+      const title = button.getAttribute('data-title')
+      const author = button.getAttribute('data-author')
+      const content = button.getAttribute('data-content')
+    
+      blogModal.querySelector('.modal-title').textContent = title
+      blogModal.querySelector('#modalAuthor').textContent = author
+    
+      blogModal.querySelector('#modalContent').textContent = content
+      blogModal.querySelector('#modalContent').innerHTML = content
+    })
+  </script>
+{% endblock %}

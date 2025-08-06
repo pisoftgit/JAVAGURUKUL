@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- Courses Start -->
+
+  <!-- Page Banner Start -->
+  <div class="section page-banner">
+    <img class="shape-1 animation-round" src="{% static 'img/shape-8.webp' %}" alt="Shape" />
+    <img class="shape-2" src="{% static 'img/shape/shape-23.webp' %}" alt="Shape" />
+
+    <div class="container">
+      <!-- Page Banner Start -->
+      <div class="page-banner-content">
+        <ul class="breadcrumb">
+          <li><a href="/">Home</a></li>
+          <li class="active">Courses</li>
+        </ul>
+        <h2 class="title">Our <span>Courses</span></h2>
+      </div>
+      <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+      <img class="icon-shape-1 animation-left" src="{% static 'img/shape-5.webp' %}" alt="Shape" />
+      <div class="box-content">
+        <div class="box-wrapper"><i class="ri-medal-line"></i></div>
+      </div>
+      <img class="icon-shape-2" src="{% static 'img/shape/shape-6.png' %}" alt="Shape" />
+    </div>
+    <!-- Shape Icon Box End -->
+
+    <img class="shape-3" src="{% static 'img/shape/shape-24.webp' %}" alt="Shape" />
+    <img class="shape-author" src="{% static 'img/author/author-11.webp' %}" alt="Shape" />
+  </div>
+  <!-- Page Banner End -->
+
+  <div class="section section-padding mt-n1">
+    <div class="container">
+      <div class="courses-top">
+        <!-- Section Title Start -->
+        <div class="section-title shape-01" id="course-container">
+          <h2 class="main-title">All Courses of <span>Java</span> गुरुकुल</h2>
+        </div>
+        <!-- Section Title End -->
+
+        <!-- Courses Search Start -->
+        <div class="courses-search">
+          <input type="text" placeholder="Search your course" id="searchInput" />
+          <button><span><i class="ri-search-line"></i></span></button>
+        </div>
+        <!-- Courses Search End -->
+      </div>
+
+      <div class="courses-wrapper">
+        <div class="row">
+          {% if course %}
+            {% for course_item in course %}
+              <div class="col-lg-4 my-3 col-md-6 course-div">
+                <!-- Single Courses Start -->
+                <div class="single-courses">
+                  <div class="courses-images">
+                    <a href="{% url 'courses-details' course_item.id %}">
+                      <img src="{{ course_item.image.url }}" class="course-img" alt="Courses" />
+                    </a>
+                  </div>
+                  <div class="courses-content">
+                    {% if course_item.author.all %}
+                      {% with first_author=course_item.author.first %}
+                        <div class="courses-author">
+                          <div class="author">
+                            <div class="author-thumb">
+                              <a href="#"><img src="{{ first_author.image.url }}" alt="Author" /></a>
+                            </div>
+                            <div class="author-name">
+                              <a class="name" href="#">{{ first_author.name }}</a>
+                            </div>
+                          </div>
+                        </div>
+                      {% endwith %}
+                    {% else %}
+                      <p>Instructors information may be hidden or instructors not assigned yet.</p>
+                    {% endif %}
+
+                    <h4 class="title"><a href="{% url 'courses-details' course_item.id %}">{{ course_item.course_name }}</a></h4>
+                    <div class="courses-meta">
+                      <span><i class="ri-time-line"></i> {{ course_item.duration }}</span>
+                      <span><i class="ri-book-read-line"></i> {{ course_item.lectures }} Lectures</span>
+                    </div>
+                    <div class="courses-price-review">
+                      <div class="courses-price">
+                        {% if course_item.course_pricing %}
+                          <span class="sale-parice">{{ course_item.price }} <span>&#8377;</span></span>
+                          {% if course_item.old_price %}
+                            <span class="old-parice">{{ course_item.old_price }}</span>
+                          {% endif %}
+                        {% else %}
+                          <span class="sale-parice">FREE <span>&#8377;</span></span>
+                          <span class="old-parice">{{ course_item.old_price }}</span>
+                        {% endif %}
+                      </div>
+                      <div class="courses-review">
+                        <span class="rating-count">{{ course_item.half_rating }}</span>
+                        <span class="rating-star">
+                          <span class="rating-bar" style="width: {{ course_item.star_width }}%;"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Single Courses End -->
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="col-12 text-center py-5">
+              <h4>No courses available right now.</h4>
+              <p>Stay tuned! Exciting new courses are on the way.</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

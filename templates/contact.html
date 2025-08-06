@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Contact Start -->
+<!-- Page Banner Start -->
+<div class="section page-banner">
+
+    <img class="shape-1 animation-round" src="{% static "img/shape-8.webp" %}" alt="Shape">
+
+    <img class="shape-2" src="{% static "img/shape/shape-23.webp" %}" alt="Shape">
+
+    <div class="container">
+        <!-- Page Banner Start -->
+        <div class="page-banner-content">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Contact</li>
+            </ul>
+            <h2 class="title">Contact <span>Us</span></h2>
+        </div>
+        <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+
+        <img class="icon-shape-1 animation-left" src="{% static "img/shape-5.webp" %}" alt="Shape">
+
+        <div class="box-content">
+            <div class="box-wrapper">
+                <i class="ri-medal-line"></i>
+            </div>
+        </div>
+
+        <img class="icon-shape-2" src="{% static "img/shape/shape-6.png" %}" alt="Shape">
+
+    </div>
+    <!-- Shape Icon Box End -->
+
+    <img class="shape-3" src="{% static "img/shape/shape-24.webp" %}" alt="Shape">
+
+    <img class="shape-author" src="{% static "img/author/author-11.webp" %}" alt="Shape">
+
+</div>
+<!-- Page Banner End -->
+<!-- Contact Map Start -->
+<div class="section section-padding-02">
+    <div class="container">
+
+        <!-- Contact Map Wrapper Start -->
+        <div class="contact-map-wrapper">
+            <iframe id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.7608125812976!2d76.6850852743172!3d30.69700518736067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390feffecf9e94a1%3A0xd1eb3732056db4f5!2sPisoft%20Informatics%20Pvt%20Ltd.!5e0!3m2!1sen!2sin!4v1707896111833!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Contact Map Wrapper End -->
+
+    </div>
+</div>
+<!-- Contact Map End -->
+
+<!-- Contact Start -->
+<div class="section section-padding">
+    <div class="container">
+
+        <!-- Contact Wrapper Start -->
+        <div class="contact-wrapper">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+
+                    <!-- Contact Info Start -->
+                    <div class="contact-info">
+
+                        <img class="shape animation-round" src="{% static "img/shape/shape-12.png" %}" alt="Shape">
+
+                        <!-- Single Contact Info Start -->
+                        <div class="single-contact-info">
+                            <div class="info-icon">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6 class="title">Phone No.</h6>
+                                <p style="font-size:20px "> <a href="tel:{{company_info.phone_number}}">{{company_info.phone_number}}</a></p>
+                            </div>
+                        </div>
+                        <!-- Single Contact Info End -->
+                        <!-- Single Contact Info Start -->
+                        <div class="single-contact-info">
+                            <div class="info-icon">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6 class="title">Email Address.</h6>
+                                <p style="font-size:20px "><a href="mailto:{{company_info.email}}">{{company_info.email}}</a></p>
+                            </div>
+                        </div>
+                        <!-- Single Contact Info End -->
+                        <!-- Single Contact Info Start -->
+                        <div class="single-contact-info">
+                            <div class="info-icon">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6 class="title">Office Address.</h6>
+                                <p class="m-0" style="font-size:20px ">{{company_info.address_line_1}}</p>
+                                <p class="m-0" style="font-size:20px ">{{company_info.address_line_2}}</p>
+                            </div>
+                        </div>
+                        <!-- Single Contact Info End -->
+                    </div>
+                    <!-- Contact Info End -->
+
+                </div>
+                <div class="col-lg-6" id="saved_">
+
+                    <!-- Contact Form Start -->
+                    <div class="contact-form">
+                        {% if messages %}
+                        <ul class="messages sticky-msg mt-3">
+                            {% for message in messages %}
+                                <li class="alert {% if message.tags %} alert-{{ message.tags }} {% endif %}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                        <h3 class="title">Get in Touch <span>With Us</span></h3>
+                        <div class="form-wrapper">
+                            {% csrf_token %}
+                            <form  method="post">
+                                {% csrf_token %}
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <input type="text" name="name" placeholder="Name">
+                                </div>
+                                <!-- Single Form End -->
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <input type="email" name="email" placeholder="Email">
+                                </div>
+                                <!-- Single Form End -->
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <input type="text" name="subject" placeholder="Subject">
+                                </div>
+                                <!-- Single Form End -->
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
+                                <!-- Single Form End -->
+                                <!-- <p class="form-message"></p> -->
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <button type="submit"  class="btn btn-primary btn-hover-dark w-100">Send Message <i class="ri-arrow-right-line"></i></button>
+                                </div>
+                                <!-- Single Form End -->
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Contact Form End -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Contact Wrapper End -->
+
+    </div>
+</div>
+<!-- Contact End -->
+<!-- Download App Start -->
+<div class="section section-padding download-section">
+
+    <div class="app-shape-1"></div>
+    <div class="app-shape-2"></div>
+    <div class="app-shape-3"></div>
+    <div class="app-shape-4"></div>
+
+    <div class="container">
+
+        <!-- Download App Wrapper Start -->
+        <div class="download-app-wrapper mt-n6">
+
+            <!-- Section Title Start -->
+            <div class="section-title section-title-white">
+                <h5 class="sub-title">Ready to start?</h5>
+                <h2 class="main-title">Watch our latest tutorials videos and subscribe our channel.</h2></h2>
+            </div>
+            <!-- Section Title End -->
+
+            <img class="shape-1 animation-right" src="{% static "img/shape/shape-14.png" %}" alt="Shape">
+
+            <!-- Download App Button End -->
+            <div class="download-app-btn">
+                <ul class="app-btn">
+                    <li>
+              <a href="https://www.youtube.com/@java-gurukul"><img src="{% static 'img/brand/youtube1.png' %}" alt="Youtube" /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/anju-malhotra-b254a712a"><img src="{% static 'img/brand/linkedin2.png' %}" alt="Linkedin" /></a>
+            </li>
+                </ul>
+            </div>
+            <!-- Download App Button End -->
+
+        </div>
+        <!-- Download App Wrapper End -->
+
+    </div>
+</div>
+
+
+{% endblock content %}

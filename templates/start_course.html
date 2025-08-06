@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Purchase Course{% endblock title %}
+{% block content %}
+<!-- Courses Start -->
+<!-- Page Banner Start -->
+<div class="section page-banner">
+
+    <img class="shape-1 animation-round" src="{% static "img/shape-8.webp" %}" alt="Shape">
+
+    <img class="shape-2" src="{% static "img/shape/shape-23.webp" %}" alt="Shape">
+
+    <div class="container">
+        <!-- Page Banner Start -->
+        <div class="page-banner-content">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Enrollment</li>
+            </ul>
+            <h2 class="title">Start Course <span>Form</span></h2>
+            </h2>
+        </div>
+        <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+
+        <img class="icon-shape-1 animation-left" src="{% static "img/shape-5.webp" %}" alt="Shape">
+
+        <div class="box-content">
+            <div class="box-wrapper">
+                <i class="ri-medal-line"></i>
+            </div>
+        </div>
+
+        <img class="icon-shape-2" src="{% static "img/shape/shape-6.png" %}" alt="Shape">
+
+    </div>
+    <!-- Shape Icon Box End -->
+
+    <img class="shape-3" src="{% static "img/shape/shape-24.webp" %}" alt="Shape">
+
+    <img class="shape-author" src="{% static "img/author/author-11.webp" %}" alt="Shape">
+
+</div>
+<!-- Page Banner End -->
+<!-- Register & Login Start -->
+<div class="section section-padding">
+    <div class="container">
+
+        <!-- Register & Login Wrapper Start -->
+        <div class="register-login-wrapper">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+
+                    <!-- Register & Login Images Start -->
+                    <div class="register-login-images">
+                        <div class="shape-1">
+                            <img src="{% static "img/shape/shape-26.webp" %}" alt="Shape">
+                        </div>
+
+
+                        <div class="images">
+                            <img src="{% static "img/register-login.webp" %}" alt="Register Login">
+                        </div>
+                    </div>
+                    <!-- Register & Login Images End -->
+
+                </div>
+                <div class="col-lg-6">
+
+                    <!-- Register & Login Form Start -->
+                    <div class="register-login-form">
+                        <h3 class="title">Start Course  <span>Now</span></h3>
+
+                        <div class="form-wrapper">
+                            
+                            <form  method="POST" action="{% url "payment-success" %}" id="course_form">
+                                
+                                {% csrf_token %}
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <input type="text" placeholder="Name" name="name" id="name" value="{{user.username}}" disabled>
+                                    <span class="error-message" id="name-error"></span>
+                                </div>
+                                <!-- Single Form End -->
+                    
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <input type="email" placeholder="Email" name="email" id="email" value="{{user.email}}" disabled>
+                                    <span class="error-message" id="email-error"></span>
+                                </div>
+                                <!-- Single Form End -->
+                    
+                    
+                                <div class="single-form ">
+                                    <input type="courses" placeholder="{{cd_name}}" name="courses" id="courses" value="{{cd_name}}" disabled>
+                                    <span class="error-message" id="email-error"></span>
+                                </div>
+
+
+                                {% comment %} <div class="single-form">
+                                    <select id="courses" name="courses" placeholder="Select Course" class="custom-select form-select">
+                                        <option value="">Select Course</option>
+                                        {% for course in Course_session_data %}
+                                        <option value="{{ course.id }}"  data-price="{{ course.price }}" data-oldprice={{course.old_price}}  data-coursename = "{{course.course_name}}">{{ course.course_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <span class="error-message" id="courses-error"></span>
+                                    </div> {% endcomment %}
+                                
+                                  <!-- Single Form Start -->
+                                  <div class="single-form ">
+                                    <select id="payment_method" name="payment_method" placeholder="Payment method" class="custom-select form-select" disabled>
+                                        <option value="">Select Payment Method</option>
+                                        <option value="credit_card" selected>Credit Card</option>
+                                        <option value="debit_card">Debit Card</option>
+                                        <option value="paypal">PayPal</option>
+                                        <option value="upi">UPI</option>
+                                        <option value="bank_transfer">Bank Transfer</option>
+                                    </select>
+                                    <span class="error-message" id="payment-method-error"></span>
+                                </div>
+                               
+                              
+                                <div class=" d-flex flex-column justify-content-end">
+                                    <p class="d-flex justify-content-end m-0">Course Amount -  <span class="text-decoration-line-through " style="margin-left:4px;" id="course-amount">{{cd_oldprice}}</span>INR</p>
+                                    <p class="d-flex justify-content-end m-0">Pay Amount -<span  style="margin-left:4px;" id="pay-amount">{{cd_price}}</span>INR</p>
+                                    <p class="d-flex justify-content-end m-0">Taxes - <span  style="margin-left:4px;">{{cd_tax}}</span></p>
+                                    <hr>
+                                    <p class="d-flex justify-content-end m-0">Total Payable Amount -<span  style="margin-left:4px;" id="total-pay-amount">{{total_price}}</span>INR</p>
+                                </div>
+                              
+                    
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    {% comment %} <button >Buy Now</button> {% endcomment %}
+                                    <button type="submit" class="btn btn-primary btn-hover-dark w-100" id="checkout-button">Checkout</button>
+                                </div>
+                                <!-- Single Form End -->
+
+                                <!-- Hidden Data to Pass -->
+                                <input type="hidden" name="course-id"  id ="course-id" value="{{cd_id}}">
+                                <input type="hidden" name="course-name" id="course-name" value="{{cd_name}}" >
+                                <input type="hidden" name="course-oldprice" id="course-oldprice"  value="{{cd_oldprice}}" >
+                                <input type="hidden" name="course-price" id="course-price" value="{{cd_price}}">
+                                <input type="hidden" name="tax" id="tax" value={{cd_tax}} >
+                                <input type="hidden" name="course-total-price" id="course-total-price" value={{total_price}} >
+
+                                
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Register & Login Form End -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Register & Login Wrapper End -->
+
+    </div>
+</div>
+<!-- Register & Login End -->
+<!-- Download App Start -->
+<div class="section section-padding download-section">
+
+    <div class="app-shape-1"></div>
+    <div class="app-shape-2"></div>
+    <div class="app-shape-3"></div>
+    <div class="app-shape-4"></div>
+
+    <div class="container">
+
+        <!-- Download App Wrapper Start -->
+        <div class="download-app-wrapper mt-n6">
+
+            <!-- Section Title Start -->
+            <div class="section-title section-title-white">
+                <h5 class="sub-title">Ready to start?</h5>
+                <h2 class="main-title">Watch our latest tutorials videos and subscribe our channel.</h2>
+            </div>
+            <!-- Section Title End -->
+
+            <img class="shape-1 animation-right" src="{% static "img/shape/shape-14.png" %}" alt="Shape">
+
+            <!-- Download App Button End -->
+            <div class="download-app-btn">
+                <ul class="app-btn">
+                    <li><a href="#"><img src="{% static "img/brand/youtube1.png" %}" alt="Youtube"></a></li>
+                    <li><a href="#"><img src="{% static "img/brand/linkedin2.png" %}" alt="Linkedin"></a></li>
+                </ul>
+            </div>
+            <!-- Download App Button End -->
+
+        </div>
+        <!-- Download App Wrapper End -->
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Function to update the course price when a course is selected
+        $('#courses').change(function() {
+            var selectedCourseId = $(this).val(); // Get the selected course ID
+            var coursePrice = $('#courses option:selected').data('price'); // Get the price of the selected course
+            var courseOldPrice = $('#courses option:selected').data('oldprice'); // Get the price of the selected course
+            var course_name = $('#courses option:selected').data('coursename'); // Get the price of the selected course
+            var course_oldprice = $('#courses option:selected').data('oldprice'); // Get the price of the selected course
+            
+            // <input type="hidden" name="course-total-prince" id="course-total-price" >
+            
+            // Update the course amount and pay amount fields with the new price
+            $('#course-amount').text(courseOldPrice);
+            $('#pay-amount').text(coursePrice);
+            $('#course-price').val(coursePrice);
+            $('#course-name').val(course_name);
+            $('#course-oldprice').val(course_oldprice);
+
+            $('#total-pay-amount').val((coursePrice/18)/100);
+            $('#total-pay-amount').val((coursePrice/18)/100);
+           
+            // <option value="{{ course.id }}"  data-price="{{ course.price }}" data-oldprice={{course.old_price}}>{{ course.course_name }}</option>
+        });
+    });
+    </script>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+      var options = {
+         
+        // Enter the Key ID generated from the Dashboard
+        key: "{{razorpay_merchant_key}}", 
+         
+        amount: "{{ razorpay_amount }}", 
+        currency: "INR",
+         
+        // Your/store name.
+        name: "{{order_name}}", 
+         
+        // Pass the `id` obtained in the response of Step 1
+        order_id: "{{ razorpay_order_id }}", 
+        callback_url: "{{callback_url}}",
+      };
+      // initialise razorpay with the options.
+      var rzp1 = new Razorpay(options);
+      console.log(options);
+       
+      // add event listener to the payment button.
+      document.getElementById("checkout-button").onclick = function (e) {
+        rzp1.open();
+        e.preventDefault();
+      };
+    </script> 
+
+{% endblock content%} 

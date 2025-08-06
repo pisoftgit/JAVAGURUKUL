@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="section page-banner">
+
+    <img class="shape-1 animation-round" src="{% static "img/shape-8.webp" %}" alt="Shape">
+
+    <img class="shape-2" src="{% static "img/shape/shape-23.webp" %}" alt="Shape">
+
+    <div class="container">
+        <!-- Page Banner Start -->
+        <div class="page-banner-content">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Blog</li>
+            </ul>
+            <h2 class="title">Our <span>Blog</span></h2>
+        </div>
+        <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+
+        <img class="icon-shape-1 animation-left" src="{% static "img/shape-5.webp" %}" alt="Shape">
+
+        <div class="box-content">
+            <div class="box-wrapper">
+                <i class="ri-medal-line"></i>
+            </div>
+        </div>
+
+        <img class="icon-shape-2" src="{% static "img/shape/shape-6.png" %}" alt="Shape">
+
+    </div>
+    <!-- Shape Icon Box End -->
+
+    <img class="shape-3" src="{% static "img/shape/shape-24.webp" %}" alt="Shape">
+
+    <img class="shape-author" src="{% static "img/author/author-11.webp" %}" alt="Shape">
+
+</div>
+<div class="container py-5">
+    <div class="blog-post">
+        <h1>{{ blog.title }}</h1>
+        <p><strong>By:</strong> {{ blog.author }} | <strong>Date:</strong> {{ blog.date }}</p>
+        <img src="{{ blog.image.url }}" class="img-fluid mb-4" alt="{{ blog.title }}">
+        <div>
+            {{ blog.content|linebreaks }}
+        </div>
+        <a href="{% url 'blog_list' %}" class="btn btn-primary mt-4">← Back to Blog</a>
+    </div>
+</div>
+{% endblock %}

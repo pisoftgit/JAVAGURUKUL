@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- faq Start -->
+<!-- Page Banner Start -->
+<div class="section page-banner">
+
+    <img class="shape-1 animation-round" src="{% static "img/shape-8.webp" %}" alt="Shape">
+
+    <img class="shape-2" src="{% static "img/shape/shape-23.webp" %}" alt="Shape">
+
+    <div class="container">
+        <!-- Page Banner Start -->
+        <div class="page-banner-content">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">FAQ</li>
+            </ul> 
+            <h2 class="title">Frequently Asked <span>Questions</span></h2>
+        </div>
+        <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+
+        <img class="icon-shape-1 animation-left" src="{% static "img/shape-5.webp" %}" alt="Shape">
+
+        <div class="box-content">
+            <div class="box-wrapper">
+                <i class="ri-medal-line"></i>
+            </div>
+        </div>
+
+        <img class="icon-shape-2" src="{% static "img/shape/shape-6.png" %}" alt="Shape">
+
+    </div>
+    <!-- Shape Icon Box End -->
+
+    <img class="shape-3" src="{% static "img/shape/shape-24.webp" %}" alt="Shape">
+
+    <img class="shape-author" src="{% static "img/author/author-11.webp" %}" alt="Shape">
+
+</div>
+
+    <div class="section section-padding">
+        <div class="container">
+
+            <!-- FAQ Tab Menu Start -->
+            <div class="faq-tab-menu">
+                <ul class="nav nav-justified">
+                    {% for faqs in unique_faq_categories %}
+                        <li class="nav-item"><button class="nav-link " data-bs-toggle="tab" data-bs-target="#{{ faqs|slugify }}">{{ faqs }}</button></li>
+                    {% endfor %}
+                </ul>
+            </div>
+    
+            <!-- FAQ Tab Content Start -->
+            <div class="tab-content">
+                {% for faq_category, faq_list in faq_dict.items %}
+                <div class="tab-pane fade show active"  id="{{ faq_category|slugify }}">
+                    <!-- FAQ Wrapper Start -->
+                    <div class="faq-wrapper">
+                        <!-- Single FAQ Item Start -->
+                        {% for faq in faq_list %}
+                        <div class="single-faq-item">
+                            <div class="row align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="faq-title">
+                                        <h4 class="title">{{faq.question}}</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="faq-text">
+                                        <p>{{faq.answer}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- Single FAQ Item End -->
+                    </div>
+                    <!-- FAQ Wrapper End -->
+                </div>
+                {% endfor %}
+            <!-- FAQ Tab Content End -->
+
+            <!-- FAQ Button End -->
+            <div class="faq-btn text-center">
+                <a class="btn btn-primary btn-hover-dark" href="/faq/">Other’s Question</a>
+            </div> 
+        </div>
+            <!-- FAQ Tab Menu End -->
+
+        </div>
+    </div>
+
+    <!-- FAQ End -->
+    <!-- Download App Start -->
+    <div class="section section-padding download-section">
+
+        <div class="app-shape-1"></div>
+        <div class="app-shape-2"></div>
+        <div class="app-shape-3"></div>
+        <div class="app-shape-4"></div>
+
+        <div class="container">
+
+            <!-- Download App Wrapper Start -->
+            <div class="download-app-wrapper mt-n6">
+
+                <!-- Section Title Start -->
+                <div class="section-title section-title-white">
+                    <h5 class="sub-title">Ready to start?</h5>
+                    <h2 class="main-title">Download our mobile app. for easy to start your course.</h2>
+                </div>
+                <!-- Section Title End -->
+
+                <img class="shape-1 animation-right" src="{% static "img/shape/shape-14.png" %}" alt="Shape">
+
+                <!-- Download App Button End -->
+                <div class="download-app-btn">
+                    <ul class="app-btn">
+                        <li><a href="#"><img src="{% static "img/google-play.png" %}" alt="Google Play"></a></li>
+                        <li><a href="#"><img src="{% static "img/app-store.png" %}" alt="App Store"></a></li>
+                    </ul>
+                </div>
+                <!-- Download App Button End -->
+
+            </div>
+            <!-- Download App Wrapper End -->
+
+        </div>
+    </div> 
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the button for "Core Java" tab
+        var coreJavaButton = document.querySelector('[data-bs-target="#core-java"]');
+        
+        // Simulate click on the "Core Java" tab button
+        coreJavaButton.click();
+    });
+    
+
+</script>
+{% endblock content %}

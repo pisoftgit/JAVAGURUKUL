@@ -1,0 +1,220 @@
+*{
+    font-family: "Nunito", sans-serif !important;
+}
+
+.awards_cards{
+    height: 115px;
+    width:  180px;
+}
+
+.list_about{
+    font-size: 1rem;
+    margin-left: 17px;
+    color: #0f7937;;
+}
+
+.left-rotate-arrow{
+    transform: rotate(180deg) !important;
+}
+
+.arrow-down{
+    position: absolute;
+    right: 10%;
+    transform: rotate(90deg) !important;
+}
+
+.single-form select {
+    width: 100%;
+    height: 60px;
+    padding: 0 25px;
+    font-size: 15px;
+    color: #52565b;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    border: 1px solid rgba(48, 146, 85, 0.2);
+    border-radius: 10px;
+    background-color: #fff
+}
+
+.single-form select:focus {
+    border-color: #309255;
+    outline: none
+}
+
+.error-message{
+    color: red;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0px 10px;
+    margin: 0px;
+}
+
+.bdr{
+    border: 2px solid blue;
+}
+
+.course-img{
+    height: 200px;
+}
+
+/* .btn-group-vertical>.btn, .btn-group>.btn{
+    padding: 0px 15px;
+} */
+
+.courses-tabs-menu {
+    padding: 30px 60px
+}
+
+
+.single-courses{
+    height: 100%;
+}
+
+.brand-logo{
+    display: flex;
+    gap: 2;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper-button-next>span, .swiper-button-prev > span{
+    font-size: 40px ;
+}
+
+.custom-select{
+    border: 1px solid #309255;
+    padding: 7px 6px; 
+    width: 100%;
+}
+
+
+/* PLay Course CSS */
+video{
+    width:40%;
+}
+.bdr{
+    border: 1px solid green;
+}
+
+.shdo{
+    box-shadow: 3px 5px 3px rgb(221, 221, 221);
+}
+
+.my-video-dimensions {
+width: 1280px;
+height: 420px;
+}
+
+.playlist-thumbnail-container{
+/* border: 2px solid red; */
+width: 80%;
+}
+.playlist-text-container{
+display: flex;
+flex-direction: column;
+/* align-items: start; */
+justify-content: center;
+width: 100%;
+margin: 0px 8px;
+/* border: 1.4px solid rgb(196, 196, 196); */
+padding-left: 12px ;
+border-radius: 7px;
+}
+.thumbnail-img{
+margin: 0px 8px !important;
+height: 74px !important;
+width: 128px;
+min-width: 128px;
+border-radius: 7px ;
+box-shadow: 1px 1px 5px black;
+}
+
+.playlist-video-title {
+text-align: left;
+line-height: 16px;
+padding: 0px;  
+color: black;
+text-overflow: ellipsis;
+/* text-wrap: wrap; */
+/* border: 2px solid red; */
+}
+
+.playlist-video-author{
+/* text-align: left; */
+text-wrap: nowrap !important;
+/* border: 2px solid red; */
+
+}
+.playlist-video-date{
+    color: black;
+    font-weight: 500;
+}
+.playlist-video-link:hover{
+   box-shadow: 2px 2px 5px rgb(160, 159, 159);
+}
+.playlist{
+    height: 550px;
+    overflow-y: scroll;
+    scrollbar-width:none;
+    scroll-behavior: smooth;
+    scrollbar-color: #c9c9c9 #e0e0e0;
+}
+
+::-webkit-scrollbar {
+    width: 0px !important;
+}
+.toast-head-green{
+    background-color: #ccfce2 ;
+    color: rgb(107, 107, 107);
+
+}
+.toast-body-green{
+    background-color: #e5f9ee ;
+}
+.toast-head-red{
+    background-color: #fd8067a9 ;
+    color: rgb(107, 107, 107);
+}
+.toast-body-red{
+    background-color: #ffd0c7dc ;
+}
+
+.alert-success, .alert-info, .alert-danger, .alert-warning{
+    background-color: transparent;
+}
+
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px); /* Adjust this value to control the floating distance */
+    }
+}
+
+.float-up-down {
+    animation: floatUpDown 1.4s ease-in-out infinite alternate;
+}
+
+
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+    .slider-rating-box {
+        top: 18%;
+        right: 18px;
+    }
+}
+@media only screen and (max-width:575px) {
+    .courses-tabs-menu {
+        padding: 30px 10px
+    }
+
+    .brand-logo{
+        justify-content: center !important; 
+    }
+    .my-video-dimensions {
+        width: 1280px;
+        height: 208px !important;
+    }
+    
+    
+}

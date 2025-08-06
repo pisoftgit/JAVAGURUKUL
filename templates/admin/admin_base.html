@@ -1,0 +1,379 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "img/dashboard-icon/favicon.ico" %}">
+     <!-- Google Web Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/@icon/icofont@1.0.1-alpha.1/icofont.min.css" rel="stylesheet">
+    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+    <link rel="stylesheet" href="{% static "css/plugins.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/custom.css" %}">
+    
+  <script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+</head>
+<body>
+    <div class="main-wrapper main-wrapper-02">
+
+        <!-- Login Header Start -->
+        <div class="section login-header">
+            <!-- Login Header Wrapper Start -->
+            <div class="login-header-wrapper navbar navbar-expand">
+
+                <!-- Header Logo Start -->
+                <div class="login-header-logo">
+                    <a href="/"><img src="{% static "img/logo-icon.webp" %}" alt="Logo"></a></li>
+                </div>
+                <!-- Header Logo End -->
+
+                <!-- Header Search Start -->
+                <div class="login-header-search dropdown">
+                    <button class="search-toggle" data-bs-toggle="dropdown"><span style="font-size:20px"><i class="icofont-search-2"></i></span></button>
+
+                    <div class="search-input dropdown-menu">
+                        <form action="#">
+                            <input type="text" placeholder="Search here">
+                        </form>
+                    </div>
+
+                </div>
+                <!-- Header Search End -->
+
+                <!-- Header Action Start -->
+                <div class="login-header-action ml-auto">
+                    <div class="dropdown">
+                        <button class="action notification" data-bs-toggle="dropdown">
+                            <i class="icofont-notification"></i>
+                            <span class="active"></span>
+                        </button>
+                        <div class="dropdown-menu dropdown-notification">
+                            <ul class="notification-items-list">
+                                <li class="notification-item">
+                                    <span class="notify-icon bg-success text-white"><i class="icofont-ui-user"></i></span>
+                                    <div class="dropdown-body">
+                                        <a href="#">
+                                            <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <span class="notify-time">3:20 am</span>
+                                </li>
+                                <li class="notification-item">
+                                    <span class="notify-icon bg-success text-white"><i class="icofont-shopping-cart"></i></span>
+                                    <div class="dropdown-body">
+                                        <a href="#">
+                                            <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                        </a>
+                                    </div>
+                                    <span class="notify-time">3:20 am</span>
+                                </li>
+                                <li class="notification-item">
+                                    <span class="notify-icon bg-danger text-white"><i class="icofont-book-mark"></i></span>
+                                    <div class="dropdown-body">
+                                        <a href="#">
+                                            <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <span class="notify-time">3:20 am</span>
+                                </li>
+                                <li class="notification-item">
+                                    <span class="notify-icon bg-success text-white"><i class="icofont-heart-alt"></i></span>
+                                    <div class="dropdown-body">
+                                        <a href="#">
+                                            <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                        </a>
+                                    </div>
+                                    <span class="notify-time">3:20 am</span>
+                                </li>
+                                <li class="notification-item">
+                                    <span class="notify-icon bg-success text-white"><i class="icofont-image"></i></span>
+                                    <div class="dropdown-body">
+                                        <a href="#">
+                                            <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <span class="notify-time">3:20 am</span>
+                                </li>
+                            </ul>
+                            <a class="all-notification" href="#">See all notifications <i class="icofont-simple-right"></i></a>
+                        </div>
+                    </div>
+
+                    <a class="action author" href="#">
+                        <img src="{% static "img/admin/dashboard-author/author-07.jpg" %}" alt="Author">
+                    </a>
+
+                    <div class="dropdown">
+                        <button class="action more" data-bs-toggle="dropdown">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="" href="#"><i class="icofont-user"></i> Profile</a></li>
+                            <li><a class="" href="#"><i class="icofont-inbox"></i> Inbox</a></li>
+                            <li><a class="" href="#"><i class="icofont-logout"></i> Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Header Action End -->
+
+            </div>
+            <!-- Login Header Wrapper End -->
+        </div>
+        <!-- Login Header End -->
+    </div>
+    {% block content %}{% endblock content %}
+    <div class="section footer-section">
+  
+        <!-- Footer Widget Section Start -->
+        <div class="footer-widget-section">
+
+            <img class="shape-1 animation-down" src="{% static "img/shape/shape-21.png" %}" alt="Shape">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 order-md-1 order-lg-1">
+
+                        <!-- Footer Widget Start -->
+                        <div class="footer-widget">
+                            <div class="widget-logo">
+                                <a href="#"><img src="{% static "img/logo (1).png" %}" alt="Logo"></a>
+                            </div>
+
+                            <div class="widget-address">
+                                <h4 class="footer-widget-title">Mohali, Punjab</h4>
+                                <p>Phase-8b sector 91 </p>
+                            </div>
+
+                            <ul class="widget-info">
+                                <li>
+                                    <p> <i class="ri-mail-line"></i> <a href="mailto:address@gmail.com">address@gmail.com</a> </p>
+                                </li>
+                                <li>
+                                    <p> <i class="ri-phone-line"></i> <a href="tel:9702621413">(970) 262-1413</a> </p>
+                                </li>
+                            </ul>
+
+                            <ul class="widget-social">
+                                <li><a href="#"><i class="ri-facebook-circle-line"></i></a></li>
+                                <li><a href="#"><i class="ri-linkedin-fill"></i></a></li>
+                                <li><a href="#"><i class="ri-twitter-line"></i></a></li>
+                                <li><a href="#"><i class="ri-skype-line"></i></a></li>
+                                <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- Footer Widget End -->
+
+                    </div>
+                    <div class="col-lg-6 order-md-3 order-lg-2">
+
+                        <!-- Footer Widget Link Start -->
+                        <div class="footer-widget-link">
+
+                            <!-- Footer Widget Start -->
+                            <div class="footer-widget">
+                                <h4 class="footer-widget-title">Category</h4>
+
+                                <ul class="widget-link">
+                                    <li><a href="#">Core Java</a></li>
+                                    <li><a href="#">Advance Java</a></li>
+                                    <li><a href="#">Spring  Boot</a></li>
+                                    <li><a href="#">Hybernate</a></li>
+                                    <li><a href="#">Development</a></li>
+                                    <li><a href="#">Designing</a></li>
+                                </ul>
+
+                            </div>
+                            <!-- Footer Widget End -->
+
+                            <!-- Footer Widget Start --> 
+                            <div class="footer-widget">
+                                <h4 class="footer-widget-title">Quick Links</h4>
+
+                                <ul class="widget-link">
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Discussion</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Customer Support</a></li>
+                                    <li><a href="/faq/">Course FAQ’s</a></li>
+                                </ul>
+
+                            </div>
+                            <!-- Footer Widget End -->
+                        </div>
+                        <!-- Footer Widget Link End -->
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 order-md-2 order-lg-3">
+
+                        <!-- Footer Widget Start -->
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title">Subscribe</h4>
+
+                            <div class="widget-subscribe">
+                                <p>Get the latest tutorials delivered to your inbox. Subscribe now!</p>
+
+                                <div class="widget-form">
+                                    <form action="#">
+                                        <input type="text" placeholder="Email here">
+                                        <button class="btn btn-primary btn-hover-dark">Subscribe Now</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer Widget End -->
+
+                    </div>
+                </div>
+            </div>
+
+            <img class="shape-2 animation-round" src="{% static "img/shape/shape-22.png" %}" alt="Shape">
+
+        </div>
+        <!-- Footer Widget Section End -->
+
+        <!-- Footer Copyright Start -->
+        <div class="footer-copyright">
+            <div class="container">
+
+                <!-- Footer Copyright Start -->
+                <div class="copyright-wrapper">
+                    <div class="copyright-link">
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Sitemap</a>
+                        <a href="#">Security</a>
+                    </div>
+                    <div class="copyright-text">
+                        <p>© 2024 <span> Java Gurukul </span> Designed <i class="ri-heart-line"></i>by <a href="#">pisoft Informatics pvt. Ltd.</a></p>
+                    </div>
+                </div>
+                <!-- Footer Copyright End -->
+
+            </div>
+        </div>
+        <!-- Footer Copyright End -->
+
+    </div>
+    <!-- Footer End -->
+
+    <!--Back To Start-->
+    <a href="#" class="back-to-top">
+        <i class="icofont-simple-up"></i>
+    </a>
+    <!--Back To End-->
+
+</div>
+
+
+<script src="{% static "js/vendor/modernizr-2.8.3.min.js" %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{% static "js/plugins.min.js" %}"></script>
+<script src="{% static "js/main.js" %}"></script>
+<script src="{% static "js/jquery.vmap.min.js" %}"></script>
+<script src="{% static "js/jquery.vmap.world.js" %}"></script>
+<script src="{% static "js/jquery.vmap.sampledata.js" %}"></script>
+
+
+<script>
+    (function ($) {
+        "use strict";
+    
+        /*--
+            Apex Charts
+        -----------------------------------*/
+    
+        var options = {
+            series: [ {
+                name: 'TEAM C',
+                type: 'line',
+                data: [0, 500, 50, 680, 210, 480, 310]
+            }],
+            chart: {
+                height: 370,
+                type: 'line',
+                stacked: false,
+                toolbar: {
+                    show: false,
+                }
+            },
+            stroke: {
+                width: [3],
+                curve: 'smooth'
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: '50%'
+                }
+            },    
+            markers: {
+                size: 0
+            },
+            colors: ['#309255'],
+            xaxis: {
+                categories: [
+                    ['Oct’20'],
+                    ['Nov’20'],
+                    ['Dec’20'],
+                    ['Jan’21'],
+                    ['Feb’21'],
+                    ['Mar’21'],
+                ],
+                labels: {
+                    style: {
+                        colors: ['#52565b'],
+                        fontSize: '14px',
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: 400,
+                    }
+                }
+            },
+            yaxis: {
+                tickAmount: 7,
+                min: 0,
+                labels: {
+                    style: {
+                        colors: ['#52565b'],
+                        fontSize: '14px',
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: 400,
+                    },
+                },
+            },
+            tooltip: {
+                shared: true,
+                intersect: false,
+                y: {
+                    formatter: function (y) {
+                    if (typeof y !== "undefined") {
+                        return y.toFixed(0) + " points";
+                    }
+                    return y;
+                
+                    }
+                }
+                }
+            };
+    
+            var chart = new ApexCharts(document.querySelector("#uniqueReport"), options);
+            chart.render();
+    
+        
+    })(jQuery);
+    
+</script>
+</body>
+</html>

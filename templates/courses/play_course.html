@@ -1,0 +1,573 @@
+{% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}  {{course_topic.title}}  {% endblock title %}
+
+
+{% block content %}
+
+
+<style>
+
+.video-js .vjs-big-play-button{
+    top: 40%;
+left: 44%;
+}
+</style>
+
+
+<div class="section page-banner">
+    <img class="shape-1 animation-round" src="{% static "img/shape-8.webp" %}" alt="Shape">
+
+    <img class="shape-2" src="{% static "img/shape/shape-23.webp" %}" alt="Shape">
+
+    <div class="container">
+        <!-- Page Banner Start -->
+        <div class="page-banner-content">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Courses</li>
+            </ul>
+            <h2 class="title">Core <span>Java</span></h2>
+        </div>
+        <!-- Page Banner End -->
+    </div>
+    <div class="shape-icon-box">
+
+        <img class="icon-shape-1 animation-left" src="{% static "img/shape-5.webp" %}" alt="Shape">
+
+        <div class="box-content">
+            <div class="box-wrapper">
+                <i class="ri-medal-line"></i>
+            </div>
+        </div>
+
+        <img class="icon-shape-2" src="{% static "img/shape/shape-6.png" %}" alt="Shape">
+
+    </div>
+    <!-- Shape Icon Box End -->
+
+    <img class="shape-3" src="{% static "img/shape/shape-24.webp" %}" alt="Shape">
+
+    <img class="shape-author" src="{% static "img/author/author-11.webp" %}" alt="Shape">
+
+</div>
+<div class="section section-padding mt-n10">
+    <div class="container">
+        <div class="row gx-10">
+            <div class="col-lg-8">
+
+                <!-- Courses Details Start -->
+                <div class="courses-details">
+                    <div class="courses-details-images">
+                        <!-- <img src="{{course_topic.image.url}}" alt="Courses Details"> -->
+                        {% if course_topic.video_link %}
+                        <!-- <video id="my-video" class="video-js" controls preload="auto" poster="{{course_topic.image}}" >
+                            <source src="{{course_topic.video_link}}" type="video/mp4">
+                        </video> -->
+                        <iframe class="w-100" height="415" src="{{course_topic.video_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        {% endif %}
+                        {% if course_topic.video_file %}
+                        <div class="video-container">
+                            <video id="my-video" class="video-js w-100" controls preload="auto" poster="{{course_topic.image}}" >
+                                <source src="{{course_topic.video_file.url}}">
+                            </video>
+                        </div>
+                       {% endif %}
+                        <span class="tags">{{course.tag}}</span>
+
+                        <!-- <div class="courses-play">
+                            <img src="{% static "img/shape/circle-shape.webp" %}" alt="Play">
+                            <span style="font-size:60px"><i class="ri-play-circle-fill"></i></span>
+
+                        </div> -->
+                        
+                       
+                    </div>
+                    
+                    <h2 class="title">{{course_topic.title | title}} | {{course.course_name | title}}</h2>
+                    
+                    <div class="courses-details-admin">
+                        {% comment %} <div class="admin-author">
+                            <div class="author-thumb">
+                                <img src="{{course.author_image.url}}" alt="Author">
+                            </div>
+                            <div class="author-content">
+                                <a class="name" href="#">{{course.author | title}}</a>
+                                <span class="Enroll">286 Enrolled Students</span>
+                            </div>
+                        </div> {% endcomment %}
+
+                        {% if course.author.all %}
+                        {% with first_author=course.author.first %}
+                            <div class="admin-author">
+                                    <div class="author-thumb">
+                                        <img src="{{first_author.image.url}}" alt="Author">
+                                    </div>
+                                    <div class="author-content">
+                                        <a class="name" href="#">{{ first_author.name }}</a>
+                                        <span class="Enroll">286 Enrolled Students</span>
+                                    </div>
+                                
+                            </div>
+                        {% endwith %}
+                        {% else %}
+                             <p>Instructors information may be hidden or instructors not assigned yet.</p>
+                        {% endif %}
+
+                        <div class="admin-rating">
+                            <span class="rating-count">{{Coursedata.rating}}</span>
+                            <span class="rating-star">
+                                    <span class="rating-bar" style="width: 89%;"></span>
+                            </span>
+                            <span class="rating-text">(5,764 Rating)</span>
+                        </div>
+                    </div>
+
+                    <!-- Courses Details Tab Start -->
+                    <div class="courses-details-tab">
+
+                        <!-- Details Tab Menu Start -->
+                        {% if course_topic.video_description or course_topic.resources or course_topic.notes  %}
+                        <div class="details-tab-menu">
+                            <ul class="nav justify-content-center">
+                                {% if course_topic.video_description %}
+                                <li><button class="active" data-bs-toggle="tab" data-bs-target="#description">Description</button></li>
+                            {% endif %}
+                            {% if course_topic.notes %}
+                                <li><button data-bs-toggle="tab" data-bs-target="#notes">Notes</button></li>
+                            {% endif %}
+                            {% if course_topic.resources %}
+                                <li><button data-bs-toggle="tab" data-bs-target="#resources">Resources</button></li>
+                            {% endif %}
+                            </ul>
+                        </div>
+                        
+                        <!-- Details Tab Menu End -->
+
+                        <!-- Details Tab Content Start -->
+                        <div class="details-tab-content">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="description">
+
+                                    <!-- Tab Description Start -->
+                                    <div class="tab-description">
+                                       
+                                        <div class="description-wrapper">
+                                            <h3 class="tab-title">Description</h3>
+                                            <p>{{course_topic.video_description | safe}}</p>
+                                        </div>
+                                    
+                                        <div class="description-wrapper">
+                                            <h3 class="tab-title">Certification:</h3>
+                                            <p>Upon successful completion of our course, you'll receive a prestigious certification recognized by industry leaders worldwide. Showcase your newfound skills and expertise with a certificate that validates your dedication to professional development. Our certifications are a testament to your commitment to excellence, empowering you to stand out in a competitive job market. </p>
+                                            <!-- <p> Display your achievement proudly on your resume, LinkedIn profile, or portfolio to demonstrate your qualifications to potential employers. Join the ranks of our certified graduates who have gone on to achieve remarkable success in their careers. Take the next step towards your goals with our esteemed certification program.</p> -->
+                                        </div>
+                                    </div>
+                                    <!-- Tab Description End -->
+
+                                </div>
+                                <div class="tab-pane fade" id="notes">
+                                    <div class="tab-description">
+                                    <div class="description-wrapper">
+                                        <h3 class="tab-title">Notes</h3>
+                                        <p>{{course_topic.notes | safe }}</p>
+                                    </div>
+                                </div>
+
+                                    {% comment %} <div class="tab-instructors">
+                                        <h3 class="tab-title">Course Notes:</h3>
+
+                                        <div class="row">
+                                            <div class="col-md-3 col-6">
+                                                <!-- Single Team Start -->
+                                                <div class="single-team">
+                                                    <div class="team-thumb">
+                                                        <img src="{% static "img/author/author-02.jpg" %}" alt="Author">
+                                                    </div>
+                                                    <div class="team-content">
+                                                        <div class="rating">
+                                                            <span class="count">4.9</span>
+                                                            <i class="ri-star-line"></i>
+                                                            <span class="text">(rating)</span>
+                                                        </div>
+                                                        <h4 class="name">Mitchell Colon</h4>
+                                                        <span class="designation">BBA, Instructor</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Single Team End -->
+                                            </div>
+                                        </div>
+
+                                        <div class="row gx-10">
+                                            <div class="col-lg-6">
+                                                <div class="tab-rating-content">
+                                                    <h3 class="tab-title">Rating:</h3>
+                                                    <p>Our instructors are consistently rated highly by our learners for their expertise, engaging teaching style, and dedication to student success. With extensive industry experience and a passion for sharing knowledge, they bring unparalleled insights to each lesson.</p>
+                                                    <p>Benefit from their guidance, personalized feedback, and commitment to fostering a supportive learning environment. </p>
+                                                    <p>Join thousands of satisfied learners who have rated our instructors as top-notch educators in their fields."</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="tab-rating-box">
+                                                    <span class="count">4.8 <i class="ri-star-line"></i></span>
+                                                    <p>Rating (86K+)</p>
+
+                                                    <div class="rating-box-wrapper">
+                                                        <div class="single-rating">
+                                                            <span class="rating-star">
+                                                                    <span class="rating-bar" style="width: 100%;"></span>
+                                                            </span>
+                                                            <div class="rating-progress-bar">
+                                                                <div class="rating-line" style="width: 75%;"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="single-rating">
+                                                            <span class="rating-star">
+                                                                    <span class="rating-bar" style="width: 80%;"></span>
+                                                            </span>
+                                                            <div class="rating-progress-bar">
+                                                                <div class="rating-line" style="width: 90%;"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="single-rating">
+                                                            <span class="rating-star">
+                                                                    <span class="rating-bar" style="width: 60%;"></span>
+                                                            </span>
+                                                            <div class="rating-progress-bar">
+                                                                <div class="rating-line" style="width: 500%;"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="single-rating">
+                                                            <span class="rating-star">
+                                                                    <span class="rating-bar" style="width: 40%;"></span>
+                                                            </span>
+                                                            <div class="rating-progress-bar">
+                                                                <div class="rating-line" style="width: 80%;"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="single-rating">
+                                                            <span class="rating-star">
+                                                                    <span class="rating-bar" style="width: 20%;"></span>
+                                                            </span>
+                                                            <div class="rating-progress-bar">
+                                                                <div class="rating-line" style="width: 40%;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> {% endcomment %}
+                                    <!-- Tab Instructors End -->
+
+                                </div>
+                                <div class="tab-pane fade" id="resources">
+                                    <div class="tab-description">
+                                        <div class="description-wrapper">
+                                            <h3 class="tab-title">Resources</h3>
+                                            <p>{{course_topic.resources | safe }}</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <!-- Tab Reviews Start -->
+                                    {% comment %} <div class="tab-reviews">
+                                        <h3 class="tab-title">Student Reviews:</h3>
+
+                                        <div class="reviews-wrapper reviews-active">
+                                            <div class="swiper-container">
+                                                <div class="swiper-wrapper">
+
+                                                    <!-- Single Reviews Start -->
+                                                    <div class="single-review swiper-slide">
+                                                        <div class="review-author">
+                                                            <div class="author-thumb">
+                                                                <img src="{% static "img/author/author-06.jpg" %}" alt="Author">
+                                                                <i class="ri-chat-quote-line"></i>
+                                                            </div>
+                                                            <div class="author-content">
+                                                                <h4 class="name">Sara Alexander</h4>
+                                                                <span class="designation">Product Designer, USA</span>
+                                                                <span class="rating-star">
+                                                                        <span class="rating-bar" style="width: 100%;"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <p>Lorem Ipsum has been the industry's standard dummy text since the 1500 when unknown printer took a galley of type and scrambled to make type specimen book has survived not five centuries but also the leap into electronic type and book.</p>
+                                                    </div>
+                                                    <!-- Single Reviews End -->
+
+                                                    <!-- Single Reviews Start -->
+                                                    <div class="single-review swiper-slide">
+                                                        <div class="review-author">
+                                                            <div class="author-thumb">
+                                                                <img src="{% static "img/author/author-07.jpg" %}" alt="Author">
+                                                                <i class="ri-chat-quote-line"></i>
+                                                            </div>
+                                                            <div class="author-content">
+                                                                <h4 class="name">Karol Bachman</h4>
+                                                                <span class="designation">Product Designer, USA</span>
+                                                                <span class="rating-star">
+                                                                        <span class="rating-bar" style="width: 100%;"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <p>Lorem Ipsum has been the industry's standard dummy text since the 1500 when unknown printer took a galley of type and scrambled to make type specimen book has survived not five centuries but also the leap into electronic type and book.</p>
+                                                    </div>
+                                                    <!-- Single Reviews End -->
+
+                                                    <!-- Single Reviews Start -->
+                                                    <div class="single-review swiper-slide">
+                                                        <div class="review-author">
+                                                            <div class="author-thumb">
+                                                                <img src="{% static "img/author/author-03.jpg" %}" alt="Author">
+                                                                <i class="ri-chat-quote-line"></i>
+                                                            </div>
+                                                            <div class="author-content">
+                                                                <h4 class="name">Gertude Culbertson</h4>
+                                                                <span class="designation">Product Designer, USA</span>
+                                                                <span class="rating-star">
+                                                                        <span class="rating-bar" style="width: 100%;"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <p>Lorem Ipsum has been the industry's standard dummy text since the 1500 when unknown printer took a galley of type and scrambled to make type specimen book has survived not five centuries but also the leap into electronic type and book.</p>
+                                                    </div>
+                                                    <!-- Single Reviews End -->
+
+                                                </div>
+                                                <!-- Add Pagination -->
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-btn">
+                                            <button type="button" class="btn btn-primary btn-hover-dark" data-bs-toggle="modal" data-bs-target="#reviewsModal">Write A Review</button>
+                                        </div>
+
+                                        <!-- Reviews Form Modal Start -->
+                                        <div class="modal fade" id="reviewsModal">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Add a Review</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+
+                                                    <!-- Reviews Form Start -->
+                                                    <div class="modal-body reviews-form">
+                                                        <form action="#">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <!-- Single Form Start -->
+                                                                    <div class="single-form">
+                                                                        <input type="text" placeholder="Enter your name">
+                                                                    </div>
+                                                                    <!-- Single Form End -->
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <!-- Single Form Start -->
+                                                                    <div class="single-form">
+                                                                        <input type="text" placeholder="Enter your Email">
+                                                                    </div>
+                                                                    <!-- Single Form End -->
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <!-- Single Form Start -->
+                                                                    <div class="reviews-rating">
+                                                                        <label>Rating</label>
+                                                                        <ul id="rating" class="rating">
+                                                                            <li class="star" title='Poor' data-value='1'><i class="ri-star-line"></i></li>
+                                                                            <li class="star" title='Poor' data-value='2'><i class="ri-star-line"></i></li>
+                                                                            <li class="star" title='Poor' data-value='3'><i class="ri-star-line"></i></li>
+                                                                            <li class="star" title='Poor' data-value='4'><i class="ri-star-line"></i></li>
+                                                                            <li class="star" title='Poor' data-value='5'><i class="ri-star-line"></i></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <!-- Single Form End -->
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <!-- Single Form Start -->
+                                                                    <div class="single-form">
+                                                                        <textarea placeholder="Write your comments here"></textarea>
+                                                                    </div>
+                                                                    <!-- Single Form End -->
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <!-- Single Form Start -->
+                                                                    <div class="single-form">
+                                                                        <button class="btn btn-primary btn-hover-dark">Submit Review</button>
+                                                                    </div>
+                                                                    <!-- Single Form End -->
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <!-- Reviews Form End -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Reviews Form Modal End -->
+
+                                    </div> {% endcomment %}
+                                    <!-- Tab Reviews End -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Details Tab Content End -->
+                        {% endif %}
+                    </div>
+                    <!-- Courses Details Tab End -->
+
+                </div>
+                <!-- Courses Details End -->
+
+            </div>
+            <div class="col-lg-4">
+                <!-- Courses Details Sidebar Start -->
+                <div class="sidebar">
+
+                    <!-- Sidebar Widget Information Start -->
+                    <div class="sidebar-widget widget-information playlist px-2 pt-4" >
+                        <div class="info-price ">
+                            <span class="price p-0" style="font-size: 20px;">More Videos In {{course_topic.course_name}}</span>
+                        </div>
+                        <div class="info-list">
+                            <ul class="mt-3">
+                                {% for topic in course_topics %}
+                                <li class="p-0">
+                                    <a href="{% url 'courses' course.slug topic.slug %}" class="playlist-video-link d-flex flex-row shdo  my-2 bdr my-1 py-2" style="border-bottom: 1px solid green; border-radius: 7px;background-color: rgba(255, 255, 255, 0) !important;">
+                                        <div class="playlist-thumbnail-container ">
+                                            <img src="{{ topic.image.url }}" class="thumbnail-img" alt="" style="height: 50px; ">
+                                        </div>
+                                        <div class="playlist-text-container">
+                                            <div class="">
+                                                <p class="playlist-video-title  text-wrap" style="display: inline-block !important;">{{ forloop.counter }}&#x2022 {{ topic.title | title | truncate_chars:32 }}</p>
+                                            </div>
+                                            <div class="d-flex gap-2 ">
+                                                <p class="playlist-video-author" style="font-size: 11px;">{{ course.author.first | title }}</p>
+                                                {% comment %} <p class="playlist-video-date" style="font-size: 11px;">2 days ago</p> {% endcomment %}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                {% empty %}
+                                    <li>Sorry, no topics available for this course.</li>
+                                {% endfor %}
+                            </ul>
+                            
+                        </div>
+                        <!-- <div class="info-btn">
+                            <a href="{% url "start_course" %}" class="btn btn-primary btn-hover-dark">Enroll Now</a>
+                        </div> -->
+                    </div>
+                    <!-- Sidebar Widget Information End -->
+
+                    <!-- Sidebar Widget Share Start -->
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">Share Course:</h4>
+
+                        <ul class="social">
+                            <li><a href="#"><i class="ri-facebook-circle-line"></i></a></li>
+                            <li><a href="#"><i class="ri-linkedin-fill"></i></a></li>
+                            <li><a href="#"><i class="ri-twitter-line"></i></a></li>
+                            <li><a href="#"><i class="ri-skype-line"></i></a></li>
+                            <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Sidebar Widget Share End -->
+
+                </div>
+                <!-- Courses Details Sidebar End -->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var player = videojs('my-video');
+
+        player.ready(function() {
+            var progressHolder = document.querySelector('.vjs-progress-holder');
+
+            progressHolder.addEventListener('mousedown', function(event) {
+                // Calculate the percentage of progress clicked
+                var progressBarWidth = progressHolder.offsetWidth;
+                var offsetX = event.clientX - progressHolder.getBoundingClientRect().left;
+                var percent = offsetX / progressBarWidth;
+
+                // Ensure the percentage is within valid range (0 to 1)
+                percent = Math.max(0, Math.min(1, percent));
+
+                // Update the video's current time
+                var seekToTime = percent * player.duration();
+                player.currentTime(seekToTime);
+
+                // Listen to mousemove and mouseup events for continuous seeking
+                document.addEventListener('mousemove', handleMouseMove);
+                document.addEventListener('mouseup', handleMouseUp);
+            });
+
+            function handleMouseMove(event) {
+                // Calculate the percentage of progress dragged
+                var progressBarWidth = progressHolder.offsetWidth;
+                var offsetX = event.clientX - progressHolder.getBoundingClientRect().left;
+                var percent = offsetX / progressBarWidth;
+
+                // Ensure the percentage is within valid range (0 to 1)
+                percent = Math.max(0, Math.min(1, percent));
+
+                // Update the video's current time continuously while dragging
+                var seekToTime = percent * player.duration();
+                player.currentTime(seekToTime);
+            }
+
+            function handleMouseUp() {
+                // Stop listening to mousemove and mouseup events
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+            }
+        });
+    });
+</script> -->
+
+<script>
+    // Initialize Video.js on the video element
+    var player = videojs('my-video', {
+        // Options can be added here
+    });
+
+    // Handle seeking and add custom controls
+    player.ready(function() {
+        // Handle seeking
+        player.on('seeked', function(event) {
+            console.log('Seeked to:', player.currentTime());
+        });
+
+        // Add custom controls or modify player behavior here
+        // Example: Add a custom button to toggle playback speed
+        var speedButton = player.controlBar.addChild('button', {
+            text: '1x',
+            title: 'Playback Speed',
+            onClick: function() {
+                var currentSpeed = player.playbackRate();
+                if (currentSpeed === 1) {
+                    player.playbackRate(1.5); // Change playback speed to 1.5x
+                    this.el().innerText = '1.5x';
+                } else {
+                    player.playbackRate(1); // Reset playback speed to 1x
+                    this.el().innerText = '1x';
+                }
+            }
+        });
+    });
+</script>
+
+{% endblock content %}
